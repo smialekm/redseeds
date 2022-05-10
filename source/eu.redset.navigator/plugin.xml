@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="toc.xml">
+      </toc>
+      <toc
+            file="testToc.xml"
+            primary="true">
+      </toc>
+   </extension>
+   
+   
+    <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="ReDSeT"
+            id="eu.redseeds.category"/>
+      <view
+            allowMultiple="true"
+            category="eu.redseeds.category"
+            class="eu.redset.navigator.TSNavigator"
+            icon="icons/TSL Logo_eclipse.bmp"
+            id="eu.redset.navigator.view"
+            name="Current TS"/>
+   </extension>
+   
+   <!-- Declare the viewer configuration, and the default content/action bindings -->
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewer viewerId="eu.redset.navigator.view"/>
+      <viewerContentBinding viewerId="eu.redset.navigator.view">
+         <includes>
+            <contentExtension pattern="org.eclipse.ui.navigator.resourceContent"/>
+            <contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/> 
+            <contentExtension pattern="eu.redset.navigator.TSProjectFilter"/>  
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="eu.redset.navigator.view">
+         <includes>
+            <actionExtension pattern="org.eclipse.ui.navigator.resources.*"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+	<!-- Declare ReDSeT filter -->
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <commonFilter
+            id="eu.redset.navigator.TSProjectFilter"
+            name="Hide internal ReDSeeDS Files"
+            class="eu.redset.navigator.TSProjectFilter"
+            activeByDefault="true"> 
+      </commonFilter>
+   </extension>
+
+	<!-- Declare non-resource nodes -->
+	<extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redset.navigator.providers.NavigatorContentProvider"
+       id="eu.redset.navigator.navigatorContent"
+       labelProvider="eu.redset.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS Project root content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="org.eclipse.core.resources.IProject">
+       		</instanceof>
+   	   </or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.TestSpecification">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+	</navigatorContent>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redset.navigator.providers.NavigatorContentProvider"
+       id="eu.redset.navigator.navigatorContentChildrenTS"
+       labelProvider="eu.redset.navigator.providers.NavigatorLabelProvider"
+       name="Test Specification content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.TestSpecification">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.TestPackage">
+       		</instanceof>
+       	</or>
+       	<or>
+       		<instanceof
+               value="org.eclipse.core.resources.IFolder">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+	</navigatorContent>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redset.navigator.providers.NavigatorContentProvider"
+       id="eu.redset.navigator.navigatorContentTestCase"
+       labelProvider="eu.redset.navigator.providers.NavigatorLabelProvider"
+       name="Test Specification content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.TestPackage">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.UseCaseTestScenario">
+       		</instanceof>
+       	</or>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.TestScenario">
+       		</instanceof>
+       	</or>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.TestPackage">
+       		</instanceof>
+       	</or>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.Notion">
+       		</instanceof>
+       	</or>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.DomainStatement">
+       		</instanceof>
+       	</or>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.NFTest">
+       		</instanceof>
+       	</or>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.GUITest">
+       		</instanceof>
+       	</or>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.TestCase">
+       		</instanceof>
+       	</or>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.BLTest">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+        <actionProvider
+             class="eu.redset.navigator.providers.TSNavigatorActionProvider">            
+            <enablement>
+     				<adapt type="eu.redset.emf.model.tsl.TestScenario"/> 
+          	</enablement>
+       </actionProvider>
+       <actionProvider
+             class="eu.redset.navigator.providers.TSNavigatorActionProvider">
+          	<enablement>
+     				<adapt type="eu.redset.emf.model.tsl.UseCaseTestScenario"/> 
+          	</enablement>      
+       </actionProvider>
+       <actionProvider
+             class="eu.redset.navigator.providers.TSNavigatorActionProvider">
+          	<enablement>
+     				<adapt type="eu.redset.emf.model.tsl.TestCase"/> 
+          	</enablement>      
+       </actionProvider>
+       <actionProvider
+             class="eu.redset.navigator.providers.TSNavigatorActionProvider">
+          	<enablement>
+     				<adapt type="eu.redset.emf.model.tsl.NFTest"/> 
+          	</enablement>      
+       </actionProvider>
+       <actionProvider
+             class="eu.redset.navigator.providers.TSNavigatorActionProvider">
+          	<enablement>
+     				<adapt type="eu.redset.emf.model.tsl.GUITest"/> 
+          	</enablement>      
+       </actionProvider>
+       <actionProvider
+             class="eu.redset.navigator.providers.TSNavigatorActionProvider">
+          	<enablement>
+     				<adapt type="eu.redset.emf.model.tsl.BLTest"/> 
+          	</enablement>      
+       </actionProvider>
+       <actionProvider
+             class="eu.redset.navigator.providers.TSNavigatorActionProvider">
+          	<enablement>
+     				<adapt type="eu.redset.emf.model.tsl.Notion"/> 
+          	</enablement>      
+       </actionProvider>
+       </navigatorContent>
+   </extension> 
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redset.navigator.providers.NavigatorContentProvider"
+       id="eu.redset.navigator.navigatorContentUseCaseTest"
+       labelProvider="eu.redset.navigator.providers.NavigatorLabelProvider"
+       name="Test Specification content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.TestPackage">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redset.emf.model.tsl.UseCaseTest">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+       <actionProvider
+             class="eu.redset.navigator.providers.TSNavigatorActionProvider">
+            <enablement>
+     				<adapt type="eu.redset.emf.model.tsl.UseCaseTest"/> 
+          	</enablement> 
+       </actionProvider>
+       </navigatorContent>
+   </extension> 
+   
+   
+      <extension
+   		point="org.eclipse.ui.navigator.viewer">
+	   <viewerContentBinding
+	         viewerId="eu.redset.navigator.view">
+	         <includes>
+	         	<contentExtension
+	         		isRoot="false"
+	                pattern="eu.redset.navigator.*">
+	         	</contentExtension>
+	         </includes>
+	   </viewerContentBinding>	
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <viewerContribution
+            id="test.contribution1"
+            targetID="eu.redset.navigator.view">
+         <menu
+            id="eu.redset.navigator.view.popup.new" 
+            path="additions" 
+            label="New"> 
+         </menu> 
+ 		 <menu
+            id="eu.redset.navigator.view.popup.other" 
+            path="additions" 
+            label="Other"> 
+         </menu> 
+         <action
+               class="eu.redset.navigator.actions.AddTestsPackageAction"
+               enablesFor="1"
+               id="eu.redset.navigator.actions.AddTestsPackageAction"
+               label="Tests Package"
+               menubarPath="eu.redset.navigator.view.popup.new/Tests">
+               <enablement>
+               	<or>
+               		<objectClass name="eu.redset.emf.model.tsl.TestSpecification"/>   
+               		<objectClass name="eu.redset.emf.model.tsl.TestPackage"/>
+               	</or>        
+               </enablement>
+         </action>
+		<action
+               class="eu.redset.navigator.actions.AddTestScenarioAction"
+               enablesFor="1"
+               id="eu.redset.navigator.actions.AddTestScenarioAction"
+               label="Test Scenario"
+               menubarPath="eu.redset.navigator.view.popup.new/Tests">
+               <enablement>
+               		<objectClass name="eu.redset.emf.model.tsl.TestPackage"/>  
+               </enablement>
+         </action>
+         <action
+               class="eu.redset.navigator.actions.AddTestCaseAction"
+               enablesFor="1"
+               id="eu.redset.navigator.actions.AddTestCaseAction"
+               label="Test Case"
+               menubarPath="eu.redset.navigator.view.popup.new/Tests">
+               <enablement>
+               		<objectClass name="eu.redset.emf.model.tsl.TestScenario"/>  
+               </enablement>
+         </action>
+         <action
+               class="eu.redset.tsl.editors.actions.CreateCSVFileAction"
+               enablesFor="1"
+               id="eu.redset.tsl.editors.actions.CreateCSVFileAction"
+               label="CSV export"
+               menubarPath="eu.redset.navigator.view.popup.other/Tests">
+               <enablement>
+               		<objectClass name="eu.redset.emf.model.tsl.TestScenario"/>  
+               </enablement>
+         </action>
+      </viewerContribution>
+   </extension>
+</plugin>

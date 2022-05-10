@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="eu.remics.common.preferences.TALEGeneralPreferencePage"
+            id="eu.remics.common.general"
+            name="TALE">
+      </page>
+      <page
+            class="eu.remics.common.preferences.TALETagsPreferencePage"
+            id="eu.remics.common.tags"
+            name="Tags"
+            category="eu.remics.common.general">
+      </page>
+      <page
+            class="eu.remics.common.preferences.TALEAdvancedPreferencePage"
+            id="eu.remics.common.advanced"
+            name="Advanced"
+            category="eu.remics.common.general">
+      </page>
+      <page
+            class="eu.remics.common.preferences.TALERoleMapingPreferencePage"
+            id="eu.remics.common.rolemaping"
+            name="Role Maping"
+            category="eu.remics.common.general">
+      </page>
+      <page
+            class="eu.remics.common.preferences.TALEClassMapingPreferencePage"
+            id="eu.remics.common.classmaping"
+            name="Class Maping"
+            category="eu.remics.common.general">
+      </page>
+      <page
+            class="eu.remics.common.preferences.TALENameMapingPreferencePage"
+            id="eu.remics.common.namemaping"
+            name="Name Maping"
+            category="eu.remics.common.general">
+      </page>
+      <page
+            class="eu.remics.common.preferences.TALELanguageProfilesPreferencePage"
+            id="eu.remics.common.languageprofiles"
+            name="Language Profiles"
+            category="eu.remics.common.general">
+      </page>
+   </extension>
+</plugin>

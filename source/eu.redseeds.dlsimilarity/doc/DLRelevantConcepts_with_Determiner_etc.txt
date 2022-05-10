@@ -1,0 +1,158 @@
+//Schema eu.redseeds.scl.SCLWordNetSchema
+SCLGraph
+//Out: All "EnumDomain" 
+//Out: All "Package" 
+//Out: All "java5."
+//Out: All "mapping."
+//Out: rsl.rslkernel.attributes.Attribute: sclkernel.SCLElement {data: String};
+//Out: rsl.rslkernel.attributes.AttributeDefinition: sclkernel.SCLElement {name: String, type: String};
+//Out: rsl.rslkernel.attributes.AttributeSet: sclkernel.SCLElement;
+rsl.rslkernel.elements.ElementRepresentation
+rsl.rslkernel.elements.Hyperlink
+rsl.rslkernel.elements.HyperlinkedSentence
+rsl.rslkernel.elements.RepresentableElement
+rsl.rslkernel.elements.RepresentableElementRelationship
+rsl.rslkernel.elements.RepresentableElementsPackage
+rsl.rslkernel.elements.SentenceOrPhrase
+rsl.rslkernel.elements.TermOrPhrase
+rsl.rslrequirements.requirementsspecifications.ConstraintOnProcess
+rsl.rslrequirements.requirementsspecifications.ConstraintOnSystem
+rsl.rslrequirements.requirementsspecifications.FunctionalRequirementOnComposite
+rsl.rslrequirements.requirementsspecifications.FunctionalRequirementOnSystem
+rsl.rslrequirements.requirementsspecifications.Requirement
+rsl.rslrequirements.requirementsspecifications.RequirementsPackage
+rsl.rslrequirements.requirementsspecifications.RequirementsSpecification
+rsl.rslrequirements.requirementsspecifications.RSLUseCase
+rsl.rslrequirements.requirementrelationships.ConflictsWith
+rsl.rslrequirements.requirementrelationships.Constrains
+rsl.rslrequirements.requirementrelationships.DependsOn
+rsl.rslrequirements.requirementrelationships.DerivesFrom
+rsl.rslrequirements.requirementrelationships.Elaborates
+rsl.rslrequirements.requirementrelationships.Fulfils
+rsl.rslrequirements.requirementrelationships.IsSimilarTo
+rsl.rslrequirements.requirementrelationships.MakesPossible
+rsl.rslrequirements.requirementrelationships.NonInvocationRelationship
+rsl.rslrequirements.requirementrelationships.Operationalizes
+rsl.rslrequirements.requirementrelationships.RequirementRelationship
+rsl.rslrequirements.requirementrelationships.RequirementVocabularyRelationship
+rsl.rslrequirements.usecaserelationships.InvocationRelationship
+rsl.rslrequirements.usecaserelationships.Participation
+rsl.rslrequirements.usecaserelationships.Usage
+rsl.rslrequirementrepresentations.requirementrepresentations.DescriptiveRequirementRepresentation
+rsl.rslrequirementrepresentations.requirementrepresentations.ModelBasedRequirementRepresentation
+rsl.rslrequirementrepresentations.requirementrepresentations.RequirementRepresentation
+rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.ConstrainedLanguageScenario
+rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.SentenceList
+rsl.rslrequirementrepresentations.activityrepresentations.ActivityScenario
+rsl.rslrequirementrepresentationsentences.constrainedlanguagesentences.RejoinSentence
+rsl.rslrequirementrepresentationsentences.constrainedlanguagesentences.ConstrainedLanguageSentence
+//NLHS is not out because the sentence is needed as part of SentenceLIsts: 
+rsl.rslrequirementrepresentationsentences.representationsentences.NaturalLanguageHypertextSentence
+rsl.rslrequirementrepresentationsentences.svosentences.ConditionalConjunctionLink
+rsl.rslrequirementrepresentationsentences.svosentences.ConditionalSentence
+rsl.rslrequirementrepresentationsentences.svosentences.ModalSVOSentence
+rsl.rslrequirementrepresentationsentences.svosentences.ModalVerbLink
+rsl.rslrequirementrepresentationsentences.svosentences.Predicate
+rsl.rslrequirementrepresentationsentences.svosentences.SVOSentence
+rsl.rslrequirementrepresentationsentences.svosentences.Subject
+rsl.rslrequirementrepresentationsentences.controlsentences.ConditionSentence
+rsl.rslrequirementrepresentationsentences.controlsentences.ControlSentence
+rsl.rslrequirementrepresentationsentences.controlsentences.InvocationSentence
+rsl.rslrequirementrepresentationsentences.controlsentences.PostconditionSentence
+rsl.rslrequirementrepresentationsentences.controlsentences.PreconditionSentence
+//Out: rsl.rslrequirementrepresentationsentences.activityrepresentation.RSLActivityEdge: sclkernel.SCLElement;
+//Out: rsl.rslrequirementrepresentationsentences.activityrepresentation.RSLActivityNode: sclkernel.SCLElement;
+//Out: All "rsl.rslrequirementrepresentationsentences.interactionsentenceconstructs."
+rsl.rsldomainelements.domainelements.ActorOrSystemElement
+rsl.rsldomainelements.domainelements.DomainElement
+rsl.rsldomainelements.domainelements.DomainElementRelationship
+rsl.rsldomainelements.domainelements.DomainElementsPackage
+rsl.rsldomainelements.domainelements.DomainSpecification
+rsl.rsldomainelements.notions.DomainStatement
+rsl.rsldomainelements.notions.Notion
+//Out: rsl.rsldomainelements.notions.NotionAttribute: rsl.rslkernel.attributes.Attribute;
+rsl.rsldomainelements.notions.NotionSpecialisation
+rsl.rsldomainelements.notions.NotionsPackage
+rsl.rsldomainelements.systemelements.SystemElement
+rsl.rsldomainelements.systemelements.SystemElementsPackage
+rsl.rsldomainelements.actors.Actor
+rsl.rsldomainelements.actors.ActorsPackage
+//Out: All "rsl.rsldomainelements.uielements."
+rsl.rsldomainelements.domainelementrepresentations.DomainElementRepresentation
+rsl.rsldomainelements.phrases.ComplexVerbPhrase
+rsl.rsldomainelements.phrases.DeterminerLink
+rsl.rsldomainelements.phrases.ModifierLink
+rsl.rsldomainelements.phrases.NounLink
+rsl.rsldomainelements.phrases.NounPhrase
+rsl.rsldomainelements.phrases.Phrase
+rsl.rsldomainelements.phrases.PhraseHyperlink
+rsl.rsldomainelements.phrases.PhrasePrepositionLink
+rsl.rsldomainelements.phrases.PhraseVerbLink
+rsl.rsldomainelements.phrases.SimpleVerbPhrase
+rsl.rsldomainelements.phrases.VerbPhrase
+rsl.rsldomainelements.terms.Article
+rsl.rsldomainelements.terms.ConditionalConjunction
+rsl.rsldomainelements.terms.Determiner
+//Out: rsl.rsldomainelements.terms.Lemma
+//Out: rsl.rsldomainelements.terms.Lexeme
+rsl.rsldomainelements.terms.ModalVerb
+rsl.rsldomainelements.terms.Modifier
+rsl.rsldomainelements.terms.Noun
+rsl.rsldomainelements.terms.Preposition
+//Wieso ist Derterminer ein Oberkonzept von Quantifier?
+rsl.rsldomainelements.terms.Quantifier
+rsl.rsldomainelements.terms.Term
+rsl.rsldomainelements.terms.TermHyperlink
+rsl.rsldomainelements.terms.Terminology
+rsl.rsldomainelements.terms.Verb
+sclkernel.SCLElement
+sclkernel.SCLElementsPackage
+sclkernel.SoftwareArtifact
+sclkernel.SoftwareCase
+sclkernel.SCLRelationship
+//Out: sclkernel.SourceCode: sclkernel.SoftwareArtifact;
+//Out: sclkernel.DetailedDesignModel: sclkernel.SoftwareArtifact;
+//Out: sclkernel.Transformations: sclkernel.SoftwareArtifact;
+//Out: sclkernel.ArchitecturalModel: sclkernel.SoftwareArtifact;
+sclkernel.TraceabilityLink
+//Out: sclkernel.Clipboard: sclkernel.SCLElement {name: String};
+//Out: sclkernel.Implements: sclkernel.TraceabilityLink;
+//Out: sclkernel.IsAllocatedTo: sclkernel.TraceabilityLink;
+//Out: sclkernel.IsDependentOn: sclkernel.TraceabilityLink;
+//Out: sclkernel.Satisfies: sclkernel.TraceabilityLink;
+//Out: Alle mit "ea."
+//Out: Alle mit "uml."
+//Out: Alle mit "java5."
+//Out: Alle mit "mapping." 
+// ------------------------- The following list is needed by the Schema2OWL-converter:
+dictionaryelements.DictionaryElement
+dictionaryelements.RelateableDictionaryElement
+dictionaryelements.Synset
+dictionaryelements.ConditionalConjunctionSynset
+dictionaryelements.DeterminerSynset
+dictionaryelements.AdjectiveSynset
+dictionaryelements.NounSynset
+dictionaryelements.PrepositionSynset
+dictionaryelements.AdverbSynset
+dictionaryelements.VerbSynset
+// Not needed because only Synset are introduced into the TBox:
+dictionaryelements.Synonym
+dictionaryelements.AdjectiveSynonym
+dictionaryelements.AdverbSynonym
+dictionaryelements.ConditionalConjunctionSynonym
+dictionaryelements.DeterminerSynonym
+dictionaryelements.NounSynonym
+dictionaryelements.PrepositionSynonym
+dictionaryelements.VerbSynonym
+// ------------------------- The following list is needed by the WordNet2OWL-converter:
+DictionaryElement
+RelateableDictionaryElement
+// Not needed because only Synset are introduced into the TBox:
+Synonym
+AdjectiveSynonym
+AdverbSynonym
+ConditionalConjunctionSynonym
+DeterminerSynonym
+NounSynonym
+PrepositionSynonym
+VerbSynonym

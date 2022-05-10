@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="eu.redseeds.sc.editor.rsl.editors.domain.NotionEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            icon="icons/notion.gif"
+            id="eu.redseeds.sc.editor.rsl.editors.NotionEditor"
+            name="Notion Editor">
+      </editor>
+      <editor
+            name="UseCase Editor"
+            icon="icons/usecase.gif"
+            contributorClass="eu.redseeds.sc.editor.rsl.editors.UseCaseEditorContributor"
+            class="eu.redseeds.sc.editor.rsl.editors.UseCaseEditor"
+            id="eu.redseeds.sc.editor.rsl.editors.UseCaseEditor">
+      </editor>
+      <editor
+            name="Actor Editor"
+            icon="icons/actor.gif"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="eu.redseeds.sc.editor.rsl.editors.domain.ActorEditor"
+            id="eu.redseeds.sc.editor.rsl.editors.ActorEditor">
+      </editor>
+      
+      <editor
+            name="System Element Editor"
+            icon="icons/systemelement.gif"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="eu.redseeds.sc.editor.rsl.editors.domain.SystemElementEditor"
+            id="eu.redseeds.sc.editor.rsl.editors.SystemElementEditor">
+      </editor>
+      <editor
+            name="Requirement Editor"
+            icon="icons/requirement.gif"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="eu.redseeds.sc.editor.rsl.editors.RequirementEditor"
+            id="eu.redseeds.sc.editor.rsl.editors.RequirementEditor">
+      </editor>
+      <editor
+            name="Term Editor"
+            icon="icons/terminology.gif"
+            class="eu.redseeds.sc.editor.rsl.editors.TermEditor"
+            id="eu.redseeds.sc.editor.rsl.editors.TermEditor">
+      </editor>
+      <editor
+            name="Domain Manager"
+            icon="icons/domain_manager.gif"
+            class="eu.redseeds.sc.editor.rsl.editors.domain.DomainManagerEditor"
+            id="eu.redseeds.sc.editor.rsl.editors.DomainManagerEditor">
+      </editor>
+   </extension>
+
+
+	<extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="eu.redseeds.sc.editor.rsl.actionSet"
+            label="Open Editor"
+            visible="true">
+         <menu
+               id="redseeds.menu"
+               label="ReDSeeDS">
+            <separator
+                  name="redseedsGroup">
+            </separator>
+         </menu>
+		<!--<action
+            class="eu.redseeds.sc.editor.rsl.actions.NotionEditorOpenAction"
+            id="eu.redseeds.sc.editor.rsl.actions.NotionEditorOpenAction"
+            label="Open Notion Editor"
+            menubarPath="redseeds.menu/redseedsGroup"
+            tooltip="Opens Notion Editor">
+       </action>-->
+       <!--<action
+            class="eu.redseeds.sc.editor.rsl.actions.RequirementEditorOpenAction"
+            id="eu.redseeds.sc.editor.rsl.actions.RequirementEditorOpenAction"
+            label="Open Requirement Editor"
+            menubarPath="redseeds.menu/redseedsGroup"
+            tooltip="Opens Requirement Editor">
+       </action>-->
+       <action
+            class="eu.redseeds.sc.editor.rsl.actions.TermEditorOpenAction"
+            icon="icons/terminology.gif"
+            id="eu.redseeds.sc.editor.rsl.actions.TermEditorOpenAction"
+            label="Open Term Editor"
+            menubarPath="redseeds.menu/redseedsGroup"
+            tooltip="Opens Term Editor">
+       </action>
+       <action
+            class="eu.redseeds.sc.editor.rsl.actions.ValidateGraphAction"
+            id="eu.redseeds.sc.editor.rsl.actions.ValidateGraphAction"
+            label="Validate current SCLGraph"
+            menubarPath="redseeds.menu/redseedsGroup"
+            tooltip="Validates the current SCLGraph">
+       </action>
+       <action
+            class="eu.redseeds.sc.editor.rsl.actions.DomainManagerEditorOpenAction"
+            enablesFor="1"
+            icon="icons/domain_manager.gif"
+            id="eu.redseeds.sc.editor.rsl.actions.DomainManagerEditorOpenAction"
+            label="Open Domain Manager"
+            menubarPath="redseeds.menu/redseedsGroup"
+            toolbarPath="Normal/additions"
+            tooltip="Opens Domain Manager">
+            <enablement>
+                     <objectClass name="eu.redseeds.scl.model.sclkernel.SoftwareCaseDTO"/>
+               </enablement>
+       </action>
+      </actionSet>
+      
+      
+      
+      
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="eu.redseeds.category"
+            class="eu.redseeds.sc.editor.rsl.editors.domain.PhrasePropertyEditor"
+            icon="icons/domainstatement.gif"
+            id="eu.redseeds.sc.editor.rsl.editors.domain.PhrasePropertyEditor"
+            name="DomainStatementEditor"
+            ></view>
+      <stickyView
+         	id="eu.redseeds.sc.editor.rsl.editors.domain.PhrasePropertyEditor" 
+         	closeable="true"
+         	/>
+      <view
+            class="eu.redseeds.sc.editor.rsl.view.CodePreviewView"
+            icon="icons/operation.gif"
+            id="eu.redseeds.sc.editor.rsl.view.CodePreviewView"
+            name="Code preview">
+      </view>
+            
+      
+   </extension>
+  
+</plugin>

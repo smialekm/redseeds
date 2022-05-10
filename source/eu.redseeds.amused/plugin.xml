@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="eu.redseeds.amused.openAmusedLink"
+            label="Open UIStoryboard Editor(AMUSEd)..."
+            visible="true">
+       <menu
+            id="redseeds.menu"
+            label="ReDSeeDS">
+            <separator
+                  name="redseedsGroup">
+            </separator>
+       </menu>
+       <action
+            class="eu.redseeds.amused.OpenAction"
+            icon="icons/model_obj.gif"
+            id="eu.redseeds.amused.OpenAction"
+            label="Open UIStoryboard Editor(AMUSEd)..."
+            menubarPath="redseeds.menu/redseedsGroup"
+            tooltip="Open UIStoryboard Editor(AMUSEd)...">
+       </action>
+      </actionSet>
+   </extension>
+</plugin>

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE IterativeMatching SYSTEM "http://pi.informatik.uni-siegen.de/SiDiff/core.matching.iterative.dtd">
+<IterativeMatching>
+	<Settings documentType="EMFModel"
+			  firstPassMatcher="UniqueSimilarityMatcher"
+			  iterativeMatcher="DefaultMatcher"
+			  parentForceMatcher="ParentForcedMatcher" />
+
+	<MatchingConfigurations>
+
+		<!-- ***************************************************************************** -->
+		<!-- *** Terms                                                                 *** -->
+		<!-- ***************************************************************************** -->
+		
+		<NodeType name="rsl.rsldomainelements.terms.Article">
+			<Configuration moveAllowed="false" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.terms.ConditionalConjunction">
+			<Configuration moveAllowed="false" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.terms.Determiner">
+			<Configuration moveAllowed="false" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.terms.ModalVerb">
+			<Configuration moveAllowed="false" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.terms.Modifier">
+			<Configuration moveAllowed="false" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.terms.Noun">
+			<Configuration moveAllowed="false" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.terms.Preposition">
+			<Configuration moveAllowed="false" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.terms.Quantifier">
+			<Configuration moveAllowed="false" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.terms.Verb">
+			<Configuration moveAllowed="false" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+
+		<!-- ***************************************************************************** -->
+		<!-- *** Attributes                                                            *** -->
+		<!-- ***************************************************************************** -->
+
+		<NodeType name="rsl.rslkernel.attributes.Attribute">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<!-- ***************************************************************************** -->
+		<!-- *** TermHyperlinks                                                        *** -->
+		<!-- ***************************************************************************** -->
+		
+		<NodeType name="rsl.rsldomainelements.phrases.NounLink">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.phrases.DeterminerLink">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.phrases.ModifierLink">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.phrases.PhrasePrepositionLink">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.phrases.PhraseVerbLink">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.ModalVerbLink">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<!-- ***************************************************************************** -->
+		<!-- *** Phrases                                                               *** -->
+		<!-- ***************************************************************************** -->
+		
+		<NodeType name="rsl.rsldomainelements.phrases.NounPhrase">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.phrases.SimpleVerbPhrase">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.phrases.ComplexVerbPhrase">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		
+		
+		<!-- ***************************************************************************** -->
+		<!-- *** Sentences                                                             *** -->
+		<!-- ***************************************************************************** -->
+		
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.SVOSentence">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.ConditionalSentence">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.ModalSVOSentence">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.representationsentences.NaturalLanguageHypertextSentence">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.Subject">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.Predicate">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		
+		<!-- ***************************************************************************** -->
+		<!-- *** DomainElements                                                        *** -->
+		<!-- ***************************************************************************** -->
+		
+		<NodeType name="rsl.rsldomainelements.notions.Notion">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.notions.DomainStatement">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.actors.Actor">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.systemelements.SystemElement">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		
+		<!-- ***************************************************************************** -->
+		<!-- *** Requirements                                                          *** -->
+		<!-- ***************************************************************************** -->
+		
+		<NodeType name="rsl.rslrequirements.requirementsspecifications.Requirement">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<NodeType name="rsl.rslrequirements.requirementsspecifications.RSLUseCase">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+		<!-- ***************************************************************************** -->
+		<!-- *** RequirementRepresentations                                            *** -->
+		<!-- ***************************************************************************** -->
+		
+		
+		<NodeType name="rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.SentenceList">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		<NodeType name="rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.ConstrainedLanguageScenario">
+			<Configuration moveAllowed="true" parentForceMatch="false"
+			 alwaysComputeSimilarity="true" independentMatching="false"/>
+		</NodeType>
+		
+	</MatchingConfigurations>
+	
+	<!-- ***************************************************************************** -->
+	<!-- *** The comparesequence                                                   *** -->
+	<!-- ***************************************************************************** -->
+
+	<CompareSequence>
+
+	    <!-- *** Match simple elements as terms first   *** -->
+	     
+		<Item name="rsl.rsldomainelements.terms.Article"/>
+		<Item name="rsl.rsldomainelements.terms.ConditionalConjunction"/>
+		<Item name="rsl.rsldomainelements.terms.Determiner"/>
+		<Item name="rsl.rsldomainelements.terms.ModalVerb"/>
+		<Item name="rsl.rsldomainelements.terms.Modifier"/>	
+		<Item name="rsl.rsldomainelements.terms.Noun"/>
+		<Item name="rsl.rsldomainelements.terms.Preposition"/>
+		<Item name="rsl.rsldomainelements.terms.Quantifier"/>
+		<Item name="rsl.rsldomainelements.terms.Verb"/>
+	    
+	    <!-- *** Match links to terms *** -->
+	    
+	    <Item name="rsl.rsldomainelements.phrases.NounLink"/>
+	    <Item name="rsl.rsldomainelements.phrases.DeterminerLink"/>
+	    <Item name="rsl.rsldomainelements.phrases.ModifierLink"/>	    	    
+	    <Item name="rsl.rsldomainelements.phrases.PhraseVerbLink"/>
+	    <Item name="rsl.rsldomainelements.phrases.PhrasePrepositionLink"/>	
+	    <Item name="rsl.rslrequirementrepresentationsentences.svosentences.ModalVerbLink"/>
+	    	    
+	    <!-- *** Match phrases that are based on terms   *** -->
+	     
+		<Item name="rsl.rsldomainelements.phrases.NounPhrase"/>
+		<Item name="rsl.rsldomainelements.phrases.SimpleVerbPhrase"/>
+		<Item name="rsl.rsldomainelements.phrases.ComplexVerbPhrase"/>
+		
+		<!-- *** Match subject and predicate -->
+		
+		<Item name="rsl.rslrequirementrepresentationsentences.svosentences.Subject"/>
+		<Item name="rsl.rslrequirementrepresentationsentences.svosentences.Predicate"/>	
+
+	    <!-- *** Match sentences   *** -->		
+		
+		<Item name="rsl.rslrequirementrepresentationsentences.svosentences.SVOSentence"/>
+		<Item name="rsl.rslrequirementrepresentationsentences.svosentences.ModalSVOSentence"/>	
+		<Item name="rsl.rslrequirementrepresentationsentences.svosentences.ConditionalSentence"/>
+		<Item name="rsl.rslrequirementrepresentationsentences.representationsentences.NaturalLanguageHypertextSentence"/>
+		
+		
+		<!-- *** Match domain elements   *** -->	
+		
+		<Item name="rsl.rsldomainelements.notions.Notion"/>
+		<Item name="rsl.rsldomainelements.notions.DomainStatement"/>
+		<Item name="rsl.rsldomainelements.actors.Actor"/>
+		<Item name="rsl.rsldomainelements.systemelements.SystemElement"/>
+		
+		<!-- *** Match sentence lists   *** -->	
+		
+		<Item name="rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.SentenceList"/>
+		<Item name="rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.ConstrainedLanguageScenario"/>
+		
+	    <!-- *** Match requirements   *** -->	
+	    
+
+	    <Item name="rsl.rslrequirements.requirementsspecifications.RSLUseCase"/>
+	    <Item name="rsl.rslrequirements.requirementsspecifications.Requirement"/>
+	    <!-- *** Match attributes   *** -->
+	    
+	    <Item name="rsl.rslkernel.attributes.Attribute"/>
+	</CompareSequence>
+</IterativeMatching>

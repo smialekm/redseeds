@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AMUSEd runtime
+Bundle-SymbolicName: eu.redseeds.amused; singleton:=true
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.amused.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
+Bundle-Vendor: ReDSeeDS Team
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

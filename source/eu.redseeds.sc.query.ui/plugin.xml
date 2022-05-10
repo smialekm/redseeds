@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+<extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="SC Query Manager"
+            icon="icons/query.gif"
+            class="eu.redseeds.sc.query.ui.editors.SCSimilarityEditor"
+            id="eu.redseeds.sc.query.ui.editors.SCSimilarityEditor">
+      </editor>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="eu.redseeds.sc.query.ui.editors.actionSet"
+            label="Open SC Query Manager"
+            visible="true">
+         <menu
+               id="redseeds.menu"
+               label="ReDSeeDS">
+            <separator
+                  name="redseedsGroup">
+            </separator>
+         </menu>
+
+       <action
+            class="eu.redseeds.sc.query.ui.actions.SCSimilarityEditorOpenAction"
+            icon="icons/query.gif"
+            id="eu.redseeds.sc.query.ui.actions.SCSimilarityEditorOpenAction"
+            label="Open SC Query Manager"
+            menubarPath="redseeds.menu/redseedsGroup"
+            tooltip="Opens SC Query Manager">
+       </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="eu.redseeds.sc.query.ui.editors.FourTreeView"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            icon="icons/fourTreeView.GIF"
+            id="eu.redseeds.sc.query.ui.editors.FourTreeView"
+            name="4-tree view">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="eu.redseeds.sc.query.ui.actionSet"
+            label="Four Tree View Opening"
+            visible="true">
+         <menu
+               id="redseeds.menu"
+               label="ReDSeeDS">
+            <separator
+                  name="redseedsGroup">
+            </separator>
+         </menu>
+         <action
+               class="eu.redseeds.sc.query.ui.actions.FourTreeViewOpenAction"
+               enablesFor="1"
+               icon="icons/fourTreeView.GIF"
+               id="eu.redseeds.sc.query.ui.actions.FourTreeViewOpenAction"
+               label="Open 4-tree view"
+               toolbarPath="Normal/additions"
+               tooltip="4-tree view">
+        		<enablement>
+                     <objectClass name="eu.redseeds.scl.model.sclkernel.SoftwareCaseDTO"/>
+               </enablement>
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editorActions">
+      <editorContribution
+            id="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            targetID="eu.redseeds.sc.query.ui.editors.FourTreeView">
+         <action
+               class="eu.redseeds.sc.query.ui.actions.ShowSliceAction"
+               icon="icons/sliceIcon.GIF"
+               id="eu.redseeds.sc.query.ui.actions.ShowSliceAction"
+               label="Show Slice"
+               toolbarPath="Normal/additions">
+         </action>
+      </editorContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="eu.redseeds.category"
+            class="eu.redseeds.sc.query.ui.view.SCSimilarityResultView"
+            id="eu.redseeds.sc.query.ui.view.SCSimilarityResultView"
+            name="SC Similarity Result">
+      </view>
+      <view
+            category="eu.redseeds.category"
+            class="eu.redseeds.sc.query.ui.view.ScenariosDiffView"
+            id="eu.redseeds.sc.query.ui.view.ScenariosDiffView"
+            name="ScenariosDiff">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editorActions">
+      <editorContribution
+            id="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            targetID="eu.redseeds.sc.query.ui.editors.FourTreeView">
+         <action
+               class="eu.redseeds.sc.query.ui.actions.ImportSliceAction"
+               enablesFor="+"
+               icon="icons/import.gif"
+               id="eu.redseeds.sc.query.ui.actions.ImportSliceAction"
+               label="Import Slice"
+               toolbarPath="Normal/additions">
+         </action>
+      </editorContribution>
+   </extension>
+<!--   <extension
+         point="org.eclipse.ui.viewActions">
+   </extension> -->
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="eu.redseeds.sc.query.ui.merge.actionSet"
+            label="Merge imported slice automatically"
+            visible="true">
+<!--         <menu
+               id="redseeds.menu"
+               label="ReDSeeDS">
+            <separator
+                  name="redseedsGroup">
+            </separator>
+         </menu> -->
+         <action
+               class="eu.redseeds.sc.query.ui.actions.MergeSliceAction"
+               enablesFor="1"
+               icon="icons/merge.gif"
+               id="eu.redseeds.sc.query.ui.actions.MergeSliceAction"
+               label="Merge imported slice automatically"
+               toolbarPath="Normal/additions"
+               tooltip="Merge Slice">
+        		<enablement>
+                     <objectClass name="eu.redseeds.scl.model.sclkernel.ClipboardDTO"/>
+               </enablement>
+         </action>
+         </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="eu.redseeds.sc.query.ui.alp.actionSet"
+            label="Import ALP"
+            visible="true">
+         <action
+               class="eu.redseeds.sc.query.ui.actions.ImportALPAction"
+               enablesFor="1"
+               icon="icons/alp.gif"
+               id="eu.redseeds.sc.query.ui.actions.ImportALPAction"
+               label="Import an Application Logic Pattern from the Library"
+               toolbarPath="Normal/additions"
+               tooltip="Import ALP">
+        		<enablement>
+        			<or>
+        				<objectClass name="org.eclipse.core.resources.IProject"/>
+                    	<objectClass name="eu.redseeds.scl.model.sclkernel.SoftwareCaseDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO"/>
+                    </or>
+               </enablement>
+         </action>
+      </actionSet>
+   </extension>
+</plugin>

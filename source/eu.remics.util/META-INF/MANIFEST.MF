@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: eu.remics.util
+Bundle-SymbolicName: eu.remics.util
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: eu.remics.util.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ eu.redseeds.engine;bundle-version="4.3.0",
+ org.eclipse.ui.navigator;bundle-version="3.5.0",
+ eu.remics.recovery.model;bundle-version="1.0.0",
+ eu.redseeds.sc.current.repository;bundle-version="4.0.0",
+ org.eclipse.core.resources;bundle-version="3.6.1"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: eu.remics.common
+Export-Package: eu.remics.util

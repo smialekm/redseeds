@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ReDSeeDS" default="build" basedir=".">
+	
+<!--
+	This is the main ReDSeeDS build script.
+	It may be runned from eclipse environment (Ant view).
+
+	ATTENTION!
+	
+	Must be run from eu.redseeds.build directory.
+	Set your local build properties in build.local.properties 
+	(look at build.local.properties.template for details).
+	
+	build.properties should not be changed.
+-->
+
+	<property name="workspace.dir" location="${basedir}/.."/>
+
+	<property file="build.local.properties"/>			
+	
+	<target name="init">
+		<echo level="info">workspace.dir: ${workspace.dir}</echo>
+		
+		<files id="eclipse.launcher.id">
+			<include name="${eclipse.home}/plugins/org.eclipse.equinox.launcher_*.jar"/>
+		</files>
+		<files id="build.product.script.id">
+			<include name="${eclipse.home}/plugins/org.eclipse.pde.build_*/scripts/productBuild/productBuild.xml"/>
+		</files>
+		<files id="build.feature.script.id">
+			<include name="${eclipse.home}/plugins/org.eclipse.pde.build_*/scripts/build.xml"/>
+		</files>
+		
+		<property name="eclipse.launcher" refid="eclipse.launcher.id"/>
+		<property name="build.product.script" refid="build.product.script.id"/>		
+		<property name="build.feature.script" refid="build.feature.script.id"/>		
+	</target>
+			
+	<target name="product" depends="init" description="Builds ReDSeeDS product">
+		<java jar="${eclipse.launcher}" fork="true" failonerror="true" maxmemory="512m">
+			<arg value="-application"/>
+			<arg value="org.eclipse.ant.core.antRunner"/>
+			<arg value="-buildfile"/>
+			<arg file="${build.product.script}"/>
+			<sysproperty key="builder" path="${workspace.dir}/eu.redseeds.build/productBuilder"/>
+			<sysproperty key="workspace.dir" path="${workspace.dir}"/>			
+			<sysproperty key="baseLocation" path="${eclipse.home}"/>
+		</java>
+		
+		<copy 
+			file="${workspace.dir}/eu.redseeds.build/productBuilder/redseeds-setup.nsi" 
+			todir="${workspace.dir}/eu.redseeds.build/build/product/temp/tmp/redseeds"/>
+		<copy 
+			file="${workspace.dir}/eu.redseeds.build/productBuilder/redseeds.ini" 
+			todir="${workspace.dir}/eu.redseeds.build/build/product/temp/tmp/redseeds"/>
+		<copy 
+			file="${workspace.dir}/eu.redseeds.build/productBuilder/jgwnl.properties" 
+			todir="${workspace.dir}/eu.redseeds.build/build/product/temp/tmp/redseeds"/>
+		<copy 
+			file="${workspace.dir}/eu.redseeds.build/productBuilder/rsl.candidates.xml"
+			todir="${workspace.dir}/eu.redseeds.build/build/product/temp/tmp/redseeds"/>
+		<copy 
+			file="${workspace.dir}/eu.redseeds.build/productBuilder/rsl.compare.xml"
+			todir="${workspace.dir}/eu.redseeds.build/build/product/temp/tmp/redseeds"/>
+		<copy 
+			file="${workspace.dir}/eu.redseeds.build/productBuilder/rsl.matching.xml"
+			todir="${workspace.dir}/eu.redseeds.build/build/product/temp/tmp/redseeds"/>
+		<copy 
+			file="${workspace.dir}/eu.redseeds.build/productBuilder/SSJavaCOM.dll"
+			todir="${workspace.dir}/eu.redseeds.build/build/product/temp/tmp/redseeds"/>
+		
+		<taskdef name="nsis" classname="net.sf.nsisant.Task">
+			<classpath location="tools/nsisant/nsisant-1.2.jar" />
+		</taskdef>
+		
+		<tstamp>
+			<format property="build.time" pattern="yyyyMMddHHmm" />
+		</tstamp>
+
+		<nsis 
+			path="${basedir}/tools/nsis" 
+			script="${basedir}/build/product/temp/tmp/redseeds/redseeds-setup.nsi" 
+			verbosity="4"/>
+		
+		<move 
+			file="${basedir}/build/product/temp/tmp/redseeds/redseeds-setup.exe" 
+			tofile="${basedir}/build/product/redseeds-setup_${build.time}.exe"/>
+	</target>
+
+	<target name="updateSite" depends="init" description="Builds ReDSeeDS update site">
+		<mkdir dir="${workspace.dir}/eu.redseeds.build/build/updateSite/temp/features/eu.redseeds.feature"/>
+		<copy todir="${workspace.dir}/eu.redseeds.build/build/updateSite/temp/features/eu.redseeds.feature">
+			<fileset dir="${workspace.dir}/eu.redseeds.feature">
+				<include name="feature.xml"/>
+				<include name="build.properties"/>
+			</fileset>
+		</copy>
+		
+		<java jar="${eclipse.launcher}" fork="true" failonerror="true" maxmemory="512m">
+			<arg value="-application"/>
+			<arg value="org.eclipse.ant.core.antRunner"/>
+			<arg value="-buildfile"/>
+			<arg file="${build.feature.script}"/>
+			<sysproperty key="builder" path="${workspace.dir}/eu.redseeds.build/updateSiteBuilder"/>
+			<sysproperty key="workspace.dir" path="${workspace.dir}"/>			
+			<sysproperty key="baseLocation" path="${eclipse.home}"/>
+		</java>
+		
+		<filter filtersfile="${workspace.dir}/eu.redseeds.build/build/updateSite/temp/finalFeaturesVersions.properties"/>		
+		<copy 
+			file="${workspace.dir}/eu.redseeds.build/updateSiteBuilder/site.xml" 
+			todir="${workspace.dir}/eu.redseeds.build/build/updateSite/updateSite"
+			overwrite="true"
+			filtering="true"
+		/>
+	</target>
+	
+	<target name="build" depends="product,updateSite" description="Build ReDSeeDS distributables">
+		<!-- just product and updateSite targets are called -->
+	</target>
+	
+</project>

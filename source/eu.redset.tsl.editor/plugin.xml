@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension point="org.eclipse.ui.editors">
+      <editor
+            name="UseCaseTest Editor"
+            icon="icons/usecasetest.gif"
+            contributorClass="eu.redset.tsl.editor.editors.UseCaseTestEditorContributor"
+            class="eu.redset.tsl.editor.editors.UseCaseTestEditor"
+            id="eu.redset.tsl.editor.editors.UseCaseTestEditor">
+      </editor>
+       <editor
+            name="TestCase Editor"
+            icon="icons/testscenario.gif"
+            contributorClass="eu.redset.tsl.editor.editors.TestScenarioEditorContributor"
+            class="eu.redset.tsl.editor.editors.TestScenarioEditor"
+            id="eu.redset.tsl.editor.editors.TestScenarioEditor">
+      </editor>
+    </extension>
+    
+       <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="eu.redseeds.category"
+            class="eu.redset.tsl.editor.editors.TestDetailsEditor"
+            icon="icons/domainstatement.gif"
+            id="eu.redset.tsl.editor.editors.TestDetailsEditor"
+            name="TestDetailsPropertyEditor"
+            ></view>
+      <stickyView
+         	id="eu.redset.tsl.editor.editors.TestDetailsEditor" 
+         	closeable="true"
+         	/>
+            
+      
+   </extension>
+</plugin>

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SCL Model Test
+Bundle-SymbolicName: eu.redseeds.scl.model.tests
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.scl.model.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.junit,
+ eu.redseeds.common,
+ eu.redseeds.sc.current.repository,
+ eu.redseeds.scl.model,
+ eu.redseeds.terminology.model
+Bundle-Vendor: ReDSeeDS Team
+Eclipse-LazyStart: false
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

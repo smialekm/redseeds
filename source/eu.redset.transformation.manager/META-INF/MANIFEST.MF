@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ui
+Bundle-SymbolicName: eu.redset.transformation.manager;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: eu.redset.transformation.ui.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ eu.redset.transformation.engine;bundle-version="1.0.0",
+ eu.redseeds.sc.current.repository;bundle-version="4.0.0",
+ eu.redseeds.common;bundle-version="4.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.eclipse.core.resources,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.emf.ecore.xmi.impl

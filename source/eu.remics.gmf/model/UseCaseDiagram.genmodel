@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/eu.remics.gmf/src"
+    modelPluginID="eu.remics.gmf" modelName="UseCaseDiagram" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>UseCaseDiagram.ecore</foreignModel>
+  <genPackages prefix="Usecasediagram" disposableProviderFactory="true" ecorePackage="UseCaseDiagram.ecore#/">
+    <genClasses ecoreClass="UseCaseDiagram.ecore#//Actor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UseCaseDiagram.ecore#//Actor/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UseCaseDiagram.ecore#//Actor/id"/>
+    </genClasses>
+    <genClasses ecoreClass="UseCaseDiagram.ecore#//UseCase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UseCaseDiagram.ecore#//UseCase/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UseCaseDiagram.ecore#//UseCase/id"/>
+    </genClasses>
+    <genClasses ecoreClass="UseCaseDiagram.ecore#//Association">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UseCaseDiagram.ecore#//Association/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UseCaseDiagram.ecore#//Association/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UseCaseDiagram.ecore#//Association/id"/>
+    </genClasses>
+    <genClasses ecoreClass="UseCaseDiagram.ecore#//Invoke">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UseCaseDiagram.ecore#//Invoke/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UseCaseDiagram.ecore#//Invoke/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UseCaseDiagram.ecore#//Invoke/id"/>
+    </genClasses>
+    <genClasses ecoreClass="UseCaseDiagram.ecore#//UseCaseDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UseCaseDiagram.ecore#//UseCaseDiagram/actors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UseCaseDiagram.ecore#//UseCaseDiagram/associations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UseCaseDiagram.ecore#//UseCaseDiagram/usecases"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UseCaseDiagram.ecore#//UseCaseDiagram/invokes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UseCaseDiagram.ecore#//UseCaseDiagram/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UseCaseDiagram.ecore#//UseCaseDiagram/package"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

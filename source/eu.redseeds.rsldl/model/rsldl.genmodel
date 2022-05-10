@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/eu.redseeds.rsldl/src" modelPluginID="eu.redseeds.rsldl"
+    modelName="Rsldl" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false">
+  <foreignModel>rsldl.ecore</foreignModel>
+  <genPackages prefix="Rsldl" disposableProviderFactory="true" ecorePackage="rsldl.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rsldl.ecore#//DLTypeRole">
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLTypeRole/identity"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLTypeRole/persistent_role"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLTypeRole/temporary_role"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLTypeRole/template"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rsldl.ecore#//DLRelationshipParticipationDirection">
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLRelationshipParticipationDirection/undefined"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLRelationshipParticipationDirection/source"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLRelationshipParticipationDirection/target"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLRelationshipParticipationDirection/double_sided"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rsldl.ecore#//DLRelationshipParticipationMultiplicity">
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLRelationshipParticipationMultiplicity/single"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLRelationshipParticipationMultiplicity/multiple"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLRelationshipParticipationMultiplicity/ordered_multiple"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rsldl.ecore#//DLPropertyValueType">
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLPropertyValueType/string"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLPropertyValueType/boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLPropertyValueType/integer"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLPropertyValueType/float"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLPropertyValueType/date"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLPropertyValueType/set"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLPropertyValueType/ordered_set"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLPropertyValueType/time"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLPropertyValueType/enumeration"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLPropertyValueType/composite"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLPropertyValueType/inherited"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rsldl.ecore#//DLTransitionPatternType">
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLTransitionPatternType/empty"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLTransitionPatternType/simple"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLTransitionPatternType/summation"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLTransitionPatternType/multiplication"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLTransitionPatternType/system"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLTransitionPatternType/query"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLTransitionPatternType/mapping"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLTransitionPatternType/indirect"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLTransitionPatternType/evocation"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rsldl.ecore#//DLConditionPatternType">
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLConditionPatternType/empty"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLConditionPatternType/simple"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLConditionPatternType/universal_quantification"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLConditionPatternType/existential_quantification"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLConditionPatternType/membership"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rsldl.ecore#//DLFeatureType">
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLFeatureType/provided"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLFeatureType/required"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rsldl.ecore#//DLRelationshipParticipationType">
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLRelationshipParticipationType/standard"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLRelationshipParticipationType/auxiliary_parent"/>
+      <genEnumLiterals ecoreEnumLiteral="rsldl.ecore#//DLRelationshipParticipationType/auxiliary_role"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rsldl.ecore#//DLControlFlowStatementType"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rsldl.ecore#//DLPredefinedStepType"/>
+    <genClasses ecoreClass="rsldl.ecore#//DLDomain">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLDomain/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLDomain/elements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rsldl.ecore#//DLRelationshipParticipant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLRelationshipParticipant/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rsldl.ecore#//DLNotion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLNotion/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLNotion/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLNotion/dereferences"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLNotion/derived"/>
+      <genOperations ecoreOperation="rsldl.ecore#//DLNotion/getDirectAttributes"/>
+      <genOperations ecoreOperation="rsldl.ecore#//DLNotion/getAllAttributes"/>
+      <genOperations ecoreOperation="rsldl.ecore#//DLNotion/getInheritanceConditions"/>
+      <genOperations ecoreOperation="rsldl.ecore#//DLNotion/getAttributesLinks"/>
+      <genOperations ecoreOperation="rsldl.ecore#//DLNotion/getValidityConditions"/>
+      <genOperations ecoreOperation="rsldl.ecore#//DLNotion/getIdentityConditions"/>
+      <genOperations ecoreOperation="rsldl.ecore#//DLNotion/getAllAttributesLinks"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLPrimitive"/>
+    <genClasses image="false" ecoreClass="rsldl.ecore#//DLRelationship">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLRelationship/participations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLRelationship/name"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLRelationship/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLRelationship/abbreviation"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLRelationshipParticipation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLRelationshipParticipation/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLRelationshipParticipation/multiplicity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLRelationshipParticipation/participant"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rsldl.ecore#//DLRelationshipParticipation/relationship"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLRelationshipParticipation/parentParticipation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLRelationshipParticipation/type"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLDiagram/relationshipParticipants"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLDiagram/relationships"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLDiagram/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rsldl.ecore#//DLReference"/>
+    <genClasses image="false" ecoreClass="rsldl.ecore#//DLTransition"/>
+    <genClasses ecoreClass="rsldl.ecore#//DLAlghoritmicTransition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLAlghoritmicTransition/sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLPatternBasedTransition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLPatternBasedTransition/pattern"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLPatternBasedReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLPatternBasedReference/pattern"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLDataBasedReference"/>
+    <genClasses ecoreClass="rsldl.ecore#//DLEntity"/>
+    <genClasses ecoreClass="rsldl.ecore#//DLProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLProperty/valueType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLProperty/setType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rsldl.ecore#//DLFeature">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rsldl.ecore#//DLFeature/notion"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rsldl.ecore#//DLCondition">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLCondition/type"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLCondition/text"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLAttributeLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLAttributeLink/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLAttributeLink/type"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLInheritanceCondition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLInheritanceCondition/parents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLInheritanceCondition/featureType"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLIdentityCondition"/>
+    <genClasses ecoreClass="rsldl.ecore#//DLValidityCondition"/>
+    <genClasses ecoreClass="rsldl.ecore#//DLTransitionPattern">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLTransitionPattern/type"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLConditionPattern">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLConditionPattern/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rsldl.ecore#//DLPattern">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLPattern/pattern"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rsldl.ecore#//DLSubset">
+      <genOperations ecoreOperation="rsldl.ecore#//DLSubset/getDomainNotions"/>
+      <genOperations ecoreOperation="rsldl.ecore#//DLSubset/getDomainRelationships"/>
+      <genOperations ecoreOperation="rsldl.ecore#//DLSubset/getNotion">
+        <genParameters ecoreParameter="rsldl.ecore#//DLSubset/getNotion/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="rsldl.ecore#//DLSubset/getNotions">
+        <genParameters ecoreParameter="rsldl.ecore#//DLSubset/getNotions/names"/>
+      </genOperations>
+      <genOperations ecoreOperation="rsldl.ecore#//DLSubset/getRelationshipByAbbreviation">
+        <genParameters ecoreParameter="rsldl.ecore#//DLSubset/getRelationshipByAbbreviation/abbreviation"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rsldl.ecore#//DLRepository">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLRepository/domains"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLRepository/diagrams"/>
+      <genOperations ecoreOperation="rsldl.ecore#//DLRepository/getDomain">
+        <genParameters ecoreParameter="rsldl.ecore#//DLRepository/getDomain/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="rsldl.ecore#//DLRepository/getDiagram">
+        <genParameters ecoreParameter="rsldl.ecore#//DLRepository/getDiagram/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLDomainElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLDomainElement/domains"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rsldl.ecore#//DLPatternCondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLPatternCondition/pattern"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rsldl.ecore#//DLAlghoritmicTransitionSequenceElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLAlghoritmicTransitionSequenceElement/sequent"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLAlghoritmicTransitionStep"/>
+    <genClasses ecoreClass="rsldl.ecore#//DLNamedLink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLNamedLink/name"/>
+      <genOperations ecoreOperation="rsldl.ecore#//DLNamedLink/getElement"/>
+      <genOperations ecoreOperation="rsldl.ecore#//DLNamedLink/getText"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLDereferenceLink">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rsldl.ecore#//DLDereferenceLink/elementType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLDereferenceLink/pattern"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLCustomAlghoritmicTransitionStep">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLCustomAlghoritmicTransitionStep/alternative"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLCustomAlghoritmicTransitionStep/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLCustomAlghoritmicTransitionStep/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLPredefinedAlghoritmicTransitionStep">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLPredefinedAlghoritmicTransitionStep/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLPredefinedAlghoritmicTransitionStep/pattern"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLControlFlowStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rsldl.ecore#//DLControlFlowStatement/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rsldl.ecore#//DLReferencingElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLReferencingElement/subjectLink"/>
+    </genClasses>
+    <genClasses ecoreClass="rsldl.ecore#//DLPartLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rsldl.ecore#//DLPartLink/partDereference"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

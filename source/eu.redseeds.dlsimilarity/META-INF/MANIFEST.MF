@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DLSimilarity
+Bundle-SymbolicName: eu.redseeds.dlsimilarity;singleton:=true
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.owl.Activator
+Bundle-Vendor: ReDSeeDS Team
+Require-Bundle: org.eclipse.core.runtime,
+ eu.redseeds.common,
+ eu.redseeds.scl.model,
+ eu.redseeds.terminology.model
+Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ lib/commons-logging-1.1.1.jar,
+ lib/icu4j_3_4.jar,
+ lib/iri.jar,
+ lib/jena.jar,
+ lib/log4j-1.2.12.jar,
+ lib/looks-2.2.1.jar,
+ lib/pellet.jar,
+ lib/protege.jar,
+ lib/protege-owl.jar,
+ lib/xercesImpl.jar,
+ lib/junit.jar,
+ lib/arq.jar,
+ lib/aterm-java-1.6.jar,
+ lib/jetty.jar,
+ lib/relaxngDatatype.jar,
+ lib/servlet.jar,
+ lib/xsdlib.jar
+Export-Package: eu.redseeds.owl,
+ eu.redseeds.owl.connector
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

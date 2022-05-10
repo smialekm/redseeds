@@ -1,0 +1,158 @@
+//Schema eu.redseeds.scl.SCLWordNetSchema
+SCLGraph
+//Out: All "EnumDomain" 
+//Out: All "Package" 
+//Out: All "java5."
+//Out: All "mapping."
+//Out: rsl.rslkernel.attributes.Attribute: sclkernel.SCLElement {data: String};
+//Out: rsl.rslkernel.attributes.AttributeDefinition: sclkernel.SCLElement {name: String, type: String};
+//Out: rsl.rslkernel.attributes.AttributeSet: sclkernel.SCLElement;
+//Not needed with shortcuts: rsl.rslkernel.elements.ElementRepresentation
+//Not needed with shortcuts: rsl.rslkernel.elements.Hyperlink
+//Not needed with shortcuts: rsl.rslkernel.elements.HyperlinkedSentence
+//Not needed with shortcuts: rsl.rslkernel.elements.RepresentableElement
+//Not needed with shortcuts: rsl.rslkernel.elements.RepresentableElementRelationship
+//Not needed with shortcuts: rsl.rslkernel.elements.RepresentableElementsPackage
+//Not needed with shortcuts: rsl.rslkernel.elements.SentenceOrPhrase
+//Not needed with shortcuts: rsl.rslkernel.elements.TermOrPhrase
+rsl.rslrequirements.requirementsspecifications.ConstraintOnProcess
+rsl.rslrequirements.requirementsspecifications.ConstraintOnSystem
+rsl.rslrequirements.requirementsspecifications.FunctionalRequirementOnComposite
+rsl.rslrequirements.requirementsspecifications.FunctionalRequirementOnSystem
+rsl.rslrequirements.requirementsspecifications.Requirement
+//Not needed with shortcuts: rsl.rslrequirements.requirementsspecifications.RequirementsPackage
+rsl.rslrequirements.requirementsspecifications.RequirementsSpecification
+rsl.rslrequirements.requirementsspecifications.RSLUseCase
+//Not needed with shortcuts: rsl.rslrequirements.requirementrelationships.ConflictsWith
+//Not needed with shortcuts: rsl.rslrequirements.requirementrelationships.Constrains
+//Not needed with shortcuts: rsl.rslrequirements.requirementrelationships.DependsOn
+//Not needed with shortcuts: rsl.rslrequirements.requirementrelationships.DerivesFrom
+//Not needed with shortcuts: rsl.rslrequirements.requirementrelationships.Elaborates
+//Not needed with shortcuts: rsl.rslrequirements.requirementrelationships.Fulfils
+//Not needed with shortcuts: rsl.rslrequirements.requirementrelationships.IsSimilarTo
+//Not needed with shortcuts: rsl.rslrequirements.requirementrelationships.MakesPossible
+//Not needed with shortcuts: rsl.rslrequirements.requirementrelationships.NonInvocationRelationship
+//Not needed with shortcuts: rsl.rslrequirements.requirementrelationships.Operationalizes
+//Not needed with shortcuts: rsl.rslrequirements.requirementrelationships.RequirementRelationship
+//Not needed with shortcuts: rsl.rslrequirements.requirementrelationships.RequirementVocabularyRelationship
+//Not needed with shortcuts: rsl.rslrequirements.usecaserelationships.InvocationRelationship
+//Not needed with shortcuts: rsl.rslrequirements.usecaserelationships.Participation
+//Not needed with shortcuts: rsl.rslrequirements.usecaserelationships.Usage
+rsl.rslrequirementrepresentations.requirementrepresentations.DescriptiveRequirementRepresentation
+//Not needed with shortcuts: rsl.rslrequirementrepresentations.requirementrepresentations.ModelBasedRequirementRepresentation
+rsl.rslrequirementrepresentations.requirementrepresentations.RequirementRepresentation
+rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.ConstrainedLanguageScenario
+rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.SentenceList
+//Not needed with shortcuts: rsl.rslrequirementrepresentations.activityrepresentations.ActivityScenario
+rsl.rslrequirementrepresentationsentences.constrainedlanguagesentences.RejoinSentence
+rsl.rslrequirementrepresentationsentences.constrainedlanguagesentences.ConstrainedLanguageSentence
+//NLHS is not out because the sentence is needed as part of SentenceLIsts: 
+rsl.rslrequirementrepresentationsentences.representationsentences.NaturalLanguageHypertextSentence
+//Out; not realy a WordNet-term: rsl.rslrequirementrepresentationsentences.svosentences.ConditionalConjunctionLink
+rsl.rslrequirementrepresentationsentences.svosentences.ConditionalSentence
+rsl.rslrequirementrepresentationsentences.svosentences.ModalSVOSentence
+//Out: not really a WordNet-term: rsl.rslrequirementrepresentationsentences.svosentences.ModalVerbLink
+//Not needed with shortcuts: rsl.rslrequirementrepresentationsentences.svosentences.Predicate
+rsl.rslrequirementrepresentationsentences.svosentences.SVOSentence
+//Not needed with shortcuts: rsl.rslrequirementrepresentationsentences.svosentences.Subject
+rsl.rslrequirementrepresentationsentences.controlsentences.ConditionSentence
+rsl.rslrequirementrepresentationsentences.controlsentences.ControlSentence
+rsl.rslrequirementrepresentationsentences.controlsentences.InvocationSentence
+rsl.rslrequirementrepresentationsentences.controlsentences.PostconditionSentence
+rsl.rslrequirementrepresentationsentences.controlsentences.PreconditionSentence
+//Out: rsl.rslrequirementrepresentationsentences.activityrepresentation.RSLActivityEdge: sclkernel.SCLElement;
+//Out: rsl.rslrequirementrepresentationsentences.activityrepresentation.RSLActivityNode: sclkernel.SCLElement;
+//Out: All "rsl.rslrequirementrepresentationsentences.interactionsentenceconstructs."
+rsl.rsldomainelements.domainelements.ActorOrSystemElement
+rsl.rsldomainelements.domainelements.DomainElement
+//Not needed with shortcuts: rsl.rsldomainelements.domainelements.DomainElementRelationship
+//Not needed with shortcuts: rsl.rsldomainelements.domainelements.DomainElementsPackage
+rsl.rsldomainelements.domainelements.DomainSpecification
+rsl.rsldomainelements.notions.DomainStatement
+rsl.rsldomainelements.notions.Notion
+//Out: rsl.rsldomainelements.notions.NotionAttribute: rsl.rslkernel.attributes.Attribute;
+rsl.rsldomainelements.notions.NotionSpecialisation
+//Not needed with shortcuts: rsl.rsldomainelements.notions.NotionsPackage
+rsl.rsldomainelements.systemelements.SystemElement
+//Not needed with shortcuts: rsl.rsldomainelements.systemelements.SystemElementsPackage
+rsl.rsldomainelements.actors.Actor
+//Not needed with shortcuts: rsl.rsldomainelements.actors.ActorsPackage
+//Out: All "rsl.rsldomainelements.uielements."
+rsl.rsldomainelements.domainelementrepresentations.DomainElementRepresentation
+//Not needed with shortcuts: rsl.rsldomainelements.phrases.ComplexVerbPhrase
+//Out; not really a WordNet-term: rsl.rsldomainelements.phrases.DeterminerLink
+//Not needed with shortcuts: rsl.rsldomainelements.phrases.ModifierLink
+//Not needed with shortcuts: rsl.rsldomainelements.phrases.NounLink
+//Not needed with shortcuts: rsl.rsldomainelements.phrases.NounPhrase
+//Not needed with shortcuts: rsl.rsldomainelements.phrases.Phrase
+//Not needed with shortcuts: rsl.rsldomainelements.phrases.PhraseHyperlink
+//Not needed with shortcuts: rsl.rsldomainelements.phrases.PhrasePrepositionLink
+//Not needed with shortcuts: rsl.rsldomainelements.phrases.PhraseVerbLink
+//Not needed with shortcuts: rsl.rsldomainelements.phrases.SimpleVerbPhrase
+//Not needed with shortcuts: rsl.rsldomainelements.phrases.VerbPhrase
+//Out; not really a WordNet-term: rsl.rsldomainelements.terms.Article
+//Out; not really a WordNet-term: rsl.rsldomainelements.terms.ConditionalConjunction
+//Out; not really a WordNet-term: rsl.rsldomainelements.terms.Determiner
+//Out: rsl.rsldomainelements.terms.Lemma
+//Out: rsl.rsldomainelements.terms.Lexeme
+//Out; not really a WordNet-term: rsl.rsldomainelements.terms.ModalVerb
+//Not needed with shortcuts: rsl.rsldomainelements.terms.Modifier
+rsl.rsldomainelements.terms.Noun
+//Out; not really a WordNet-term: rsl.rsldomainelements.terms.Preposition
+//Wieso ist Derterminer ein Oberkonzept von Quantifier?
+//Out; not really a WordNet-term: rsl.rsldomainelements.terms.Quantifier
+//Not needed with shortcuts: rsl.rsldomainelements.terms.Term
+//Not needed with shortcuts: rsl.rsldomainelements.terms.TermHyperlink
+//Out: rsl.rsldomainelements.terms.Terminology
+rsl.rsldomainelements.terms.Verb
+//Not needed with shortcuts: sclkernel.SCLElement
+//Not needed with shortcuts: sclkernel.SCLElementsPackage
+//Not needed with shortcuts: sclkernel.SoftwareArtifact
+//Not needed with shortcuts: sclkernel.SoftwareCase
+//Not needed with shortcuts: sclkernel.SCLRelationship
+//Out: sclkernel.SourceCode: sclkernel.SoftwareArtifact;
+//Out: sclkernel.DetailedDesignModel: sclkernel.SoftwareArtifact;
+//Out: sclkernel.Transformations: sclkernel.SoftwareArtifact;
+//Out: sclkernel.ArchitecturalModel: sclkernel.SoftwareArtifact;
+//Not needed with shortcuts: sclkernel.TraceabilityLink
+//Out: sclkernel.Clipboard: sclkernel.SCLElement {name: String};
+//Out: sclkernel.Implements: sclkernel.TraceabilityLink;
+//Out: sclkernel.IsAllocatedTo: sclkernel.TraceabilityLink;
+//Out: sclkernel.IsDependentOn: sclkernel.TraceabilityLink;
+//Out: sclkernel.Satisfies: sclkernel.TraceabilityLink;
+//Out: Alle mit "ea."
+//Out: Alle mit "uml."
+//Out: Alle mit "java5."
+//Out: Alle mit "mapping." 
+// ------------------------- The following list is needed by the Schema2OWL-converter:
+dictionaryelements.DictionaryElement
+dictionaryelements.RelateableDictionaryElement
+dictionaryelements.Synset
+//Out; not really a WordNet-term: dictionaryelements.ConditionalConjunctionSynset
+//Out; not really a WordNet-term: dictionaryelements.DeterminerSynset
+dictionaryelements.AdjectiveSynset
+dictionaryelements.NounSynset
+//Out; not really a WordNet-term: dictionaryelements.PrepositionSynset
+dictionaryelements.AdverbSynset
+dictionaryelements.VerbSynset
+// Not needed because only Synset are introduced into the TBox:
+dictionaryelements.Synonym
+dictionaryelements.AdjectiveSynonym
+dictionaryelements.AdverbSynonym
+//Out; not really a WordNet-term: dictionaryelements.ConditionalConjunctionSynonym
+//Out; not really a WordNet-term: dictionaryelements.DeterminerSynonym
+dictionaryelements.NounSynonym
+//Out; not really a WordNet-term: dictionaryelements.PrepositionSynonym
+dictionaryelements.VerbSynonym
+// ------------------------- The following list is needed by the WordNet2OWL-converter:
+DictionaryElement
+RelateableDictionaryElement
+// Not needed because only Synset are introduced into the TBox:
+Synonym
+AdjectiveSynonym
+AdverbSynonym
+//Out; not really a WordNet-term: ConditionalConjunctionSynonym
+//Out; not really a WordNet-term: DeterminerSynonym
+NounSynonym
+//Out; not really a WordNet-term: PrepositionSynonym
+VerbSynonym

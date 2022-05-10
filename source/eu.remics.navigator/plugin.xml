@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="eu.remics.navigator.views.BrowserView"
+            icon="icons/remics_persp.png"
+            id="eu.remics.navigator.views.BrowserView"
+            name="Project Browser"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewer
+            viewerId="eu.remics.navigator.views.BrowserView">
+      </viewer>
+      <viewerContentBinding
+            viewerId="eu.remics.navigator.views.BrowserView">
+         <includes>
+            <contentExtension
+                  pattern="eu.remics.navigator.resourceContent">
+            </contentExtension>
+            <contentExtension
+                  pattern="eu.remics.navigator.resources.filters.*">
+            </contentExtension>
+            <contentExtension
+                  isRoot="true"
+                  pattern="eu.remics.navigator.views.navigatorContent">
+            </contentExtension>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding
+            viewerId="eu.remics.navigator.views.BrowserView">
+         <includes>
+            <actionExtension
+                  pattern="eu.remics.navigator.resources.*">
+            </actionExtension>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <navigatorContent
+            activeByDefault="true"
+            contentProvider="eu.remics.navigator.providers.ViewContentProvider"
+            id="eu.remics.navigator.views.navigatorContent"
+            labelProvider="eu.remics.navigator.providers.ViewLabelProvider"
+            name="REMICS Root project content">
+        
+         <possibleChildren>
+            <or>
+               <instanceof
+                     value="eu.remics.recovery.model.dto.XNotionsPackage">
+               </instanceof>
+               <instanceof
+                     value="eu.remics.recovery.model.dto.XUseCasesPackage">
+               </instanceof>
+               <instanceof
+                     value="eu.remics.recovery.model.dto.XPackage">
+               </instanceof>
+               <instanceof
+                     value="eu.remics.recovery.model.dto.XUseCaseDiagram">
+               </instanceof>
+            </or>
+         </possibleChildren> <triggerPoints>
+            <or>
+               <instanceof
+                     value="eu.remics.recovery.model.dto.XNotionsPackage">
+               </instanceof>
+               <instanceof
+                     value="eu.remics.recovery.model.dto.XUseCasesPackage">
+               </instanceof>
+               <instanceof
+                     value="eu.remics.recovery.model.dto.XPackage">
+               </instanceof>
+              
+            </or>
+         </triggerPoints>
+      </navigatorContent>
+   </extension>
+
+</plugin>

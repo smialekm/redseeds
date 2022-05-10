@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Terminology Model
+Bundle-SymbolicName: eu.redseeds.terminology.model
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.sc.terminology.model.Activator
+Bundle-Vendor: ReDSeeDS Team
+Require-Bundle: org.eclipse.core.runtime,
+ eu.redseeds.common,
+ org.eclipse.core.resources,
+ org.eclipse.ui
+Eclipse-LazyStart: true
+Export-Package: eu.redseeds.sc.terminology.model
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

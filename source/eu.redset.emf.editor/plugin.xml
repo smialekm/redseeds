@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="eu.redset.emf.model.tsl.presentation.TslModelWizardID"
+            name="%_UI_TslModelWizard_label"
+            class="eu.redset.emf.model.tsl.presentation.TslModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TslModelFile.gif">
+         <description>%_UI_TslModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="eu.redset.emf.model.tsl.presentation.TslEditorID"
+            name="%_UI_TslEditor_label"
+            icon="icons/full/obj16/TslModelFile.gif"
+            extensions="tsl"
+            class="eu.redset.emf.model.tsl.presentation.TslEditor"
+            contributorClass="eu.redset.emf.model.tsl.presentation.TslActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

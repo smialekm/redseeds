@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SiDiffCompare SYSTEM "http://pi.informatik.uni-siegen.de/SiDiff/core.compare.sidiffcompare.dtd">
+<SiDiffCompare>
+	<Settings cfPrefix="org.sidiff.core.compare.functions"
+			  normalizeWeights="false"
+			  documentType="RSL"/>
+	<Configurations>
+	
+	   	<!-- ***************************************************************************** -->
+		<!-- *** Structural Elements                                                   *** -->
+		<!-- ***************************************************************************** --> 
+	
+		<NodeType name="sclkernel.SoftwareCase">
+			<Configuration threshold="0.1"/>
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:sclkernel.SoftwareCaseContainsArtifact" weight="1"/>	
+			</CompareFunctions>
+		</NodeType>
+	
+		<!-- ***************************************************************************** -->
+		<!-- *** Terms                                                                 *** -->
+		<!-- ***************************************************************************** -->
+
+		<NodeType name="rsl.rsldomainelements.terms.Article">
+			<Configuration threshold="0.1"/>
+			<CompareFunctions>
+				<CompareFunction class="eu.redseeds.sc.query.comparefunctions.TermSimilarityFunction" weight="1.0"/>
+			</CompareFunctions>
+		</NodeType>
+		
+
+		<NodeType name="rsl.rsldomainelements.terms.ConditionalConjunction">
+			<Configuration threshold="0.1"/>
+			<CompareFunctions>
+				<CompareFunction class="eu.redseeds.sc.query.comparefunctions.TermSimilarityFunction" weight="1.0"/>
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.terms.Determiner">
+			<Configuration threshold="0.1"/>
+			<CompareFunctions>
+				<CompareFunction class="eu.redseeds.sc.query.comparefunctions.TermSimilarityFunction" weight="1.0"/>
+			</CompareFunctions>
+		</NodeType>
+
+
+		<NodeType name="rsl.rsldomainelements.terms.ModalVerb">
+			<Configuration threshold="0.1"/>
+			<CompareFunctions>
+				<CompareFunction class="eu.redseeds.sc.query.comparefunctions.TermSimilarityFunction" weight="1"/>
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.terms.Modifier">
+			<Configuration threshold="0.1"/>
+			<CompareFunctions>
+				<CompareFunction class="eu.redseeds.sc.query.comparefunctions.TermSimilarityFunction" weight="1.0"/>
+			</CompareFunctions>
+		</NodeType>
+
+
+		<NodeType name="rsl.rsldomainelements.terms.Noun">
+			<Configuration threshold="0.1"/>
+			<CompareFunctions>
+				<CompareFunction class="eu.redseeds.sc.query.comparefunctions.TermSimilarityFunction" weight="1.0"/>
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.terms.Preposition">
+			<Configuration threshold="0.1"/>
+			<CompareFunctions>
+				<CompareFunction class="eu.redseeds.sc.query.comparefunctions.TermSimilarityFunction" weight="1.0"/>
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.terms.Quantifier">
+			<Configuration threshold="0.1"/>
+			<CompareFunctions>
+				<CompareFunction class="eu.redseeds.sc.query.comparefunctions.TermSimilarityFunction" weight="1.0"/>
+			</CompareFunctions>
+		</NodeType>
+	
+
+		<NodeType name="rsl.rsldomainelements.terms.Verb">
+			<Configuration threshold="0.1"/>
+			<CompareFunctions>
+			   <CompareFunction class="eu.redseeds.sc.query.comparefunctions.TermSimilarityFunction" weight="1.0"/>
+			</CompareFunctions>
+		</NodeType>
+
+		
+		<!-- ***************************************************************************** -->
+		<!-- *** Attributes                                                            *** -->
+		<!-- ***************************************************************************** -->
+		
+		<NodeType name="rsl.rslkernel.attributes.Attribute">
+			<Configuration threshold="0.1"/>
+			<CompareFunctions>
+				<CompareFunction class="StringAttributeUsingEqualsCS" parameter="name" weight="0.7"/>
+				<CompareFunction class="ParentsMatchedOrSimilar" weight="0.3"/>
+			</CompareFunctions>
+		</NodeType>
+		
+		
+		<!-- ***************************************************************************** -->
+		<!-- *** Phrases                                                               *** -->
+		<!-- ***************************************************************************** -->
+		
+		<NodeType name="rsl.rsldomainelements.phrases.NounPhrase">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rsldomainelements.phrases.NounIsPartOfSource" weight="0.7"/>	
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rsldomainelements.phrases.ModifierIsPartOfSource" weight="0.2"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rsldomainelements.phrases.DeterminerIsPartOfSource" weight="0.1"/>	
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.phrases.NounLink">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.phrases.NounLinkLinksToTarget" weight="0.5"/>	
+		y!--		<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.phrases.NounIsPartOfSource" weight="0.5"/> -->	
+			</CompareFunctions>
+		</NodeType>    
+		
+		<NodeType name="rsl.rsldomainelements.phrases.DeterminerLink">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="OutgoingReferenceSimilar"  parameter="rsl.rsldomainelements.phrases.DeterminerLinkLinksToTarget" weight="0.5"/>
+			<!--	<CompareFunction class="OutgoingReferenceSimilar"  parameter="rsl.rsldomainelements.phrases.DeterminerIsPartOfSource" weight="0.5"/>	-->
+			</CompareFunctions>
+		</NodeType> 
+		
+		<NodeType name="rsl.rsldomainelements.phrases.ModifierLink">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="OutgoingReferenceSimilar"  parameter="rsl.rsldomainelements.phrases.ModifierLinkLinksToTarget" weight="1.0"/>	
+		<!--		<CompareFunction class="OutgoingReferenceSimilar"  parameter="rsl.rsldomainelements.phrases.ModifierIsPartOfSource" weight="0.5"/>	-->
+			</CompareFunctions>
+		</NodeType> 
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.ModalVerbLink">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<!--<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirementrepresentationsentences.svosentences.ModalVerbIsPartOfSource" weight="0.5"/>-->
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirementrepresentationsentences.svosentences.ModalVerbLinkLinksToTarget" weight="1.0"/>
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.phrases.ComplexVerbPhrase">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.phrases.ComplexVerbPhraseContainsSimpleVerbPhrase" weight="0.6"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.phrases.VerbPhraseContainsObject" weight="0.35"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rsldomainelements.phrases.PrepositionIsPartOfSource/o:rsl.rsldomainelements.phrases.PrepositionLinkLinksToTarget" weight="0.05"/>		
+			</CompareFunctions>
+		</NodeType>
+	
+		<NodeType name="rsl.rsldomainelements.phrases.SimpleVerbPhrase">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.phrases.VerbPhraseContainsObject" weight="0.6"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rsldomainelements.phrases.VerbIsPartOfSource/o:rsl.rsldomainelements.phrases.VerbLinkLinksToTarget" weight="0.35"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rsldomainelements.phrases.PrepositionIsPartOfSource/o:rsl.rsldomainelements.phrases.PrepositionLinkLinksToTarget" weight="0.05"/>		
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.phrases.PhrasePrepositionLink">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.phrases.PrepositionLinkLinksToTarget" weight="0.5"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.phrases.PrepositionIsPartOfSource" weight="0.5"/>
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.phrases.PhraseVerbLink">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.phrases.VerbIsPartOfSource" weight="0.5"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.phrases.VerbLinkLinksToTarget" weight="0.5"/>
+			</CompareFunctions>
+		</NodeType>
+		
+	<!--	<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.Subject">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirementrepresentationsentences.svosentences.SubjectIsPartOfSource" weight="0.5"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirementrepresentationsentences.svosentences.SubjectContainsTarget" weight="0.5"/>	
+			</CompareFunctions>
+		</NodeType> -->
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.Subject">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirementrepresentationsentences.svosentences.SubjectContainsTarget" weight="1"/>	
+			</CompareFunctions>
+		</NodeType>
+		
+	<!--	<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.Predicate">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirementrepresentationsentences.svosentences.PredicateIsPartOfSource" weight="0.5"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirementrepresentationsentences.svosentences.PredicateContainsTarget" weight="0.5"/>	
+			</CompareFunctions>
+		</NodeType>
+		-->
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.Predicate">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirementrepresentationsentences.svosentences.PredicateContainsTarget" weight="1"/>	
+			</CompareFunctions>
+		</NodeType>
+		
+		<!-- ***************************************************************************** -->
+		<!-- *** Sentences                                                             *** -->
+		<!-- ***************************************************************************** -->
+	
+	<!--	
+		<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.SVOSentence">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rslrequirementrepresentationsentences.svosentences.SubjectIsPartOfSource/o:rsl.rslrequirementrepresentationsentences.svosentences.SubjectContainsTarget" weight="0.4"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rslrequirementrepresentationsentences.svosentences.PredicateIsPartOfSource/o:rsl.rslrequirementrepresentationsentences.svosentences.PredicateContainsTarget" weight="0.6"/>	
+			</CompareFunctions>
+		</NodeType> -->
+		
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.SVOSentence">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rslrequirementrepresentationsentences.svosentences.SubjectIsPartOfSource" weight="0.4"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rslrequirementrepresentationsentences.svosentences.PredicateIsPartOfSource" weight="0.6"/>	
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.ModalSVOSentence">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rslrequirementrepresentationsentences.svosentences.SubjectIsPartOfSource/o:rsl.rslrequirementrepresentationsentences.svosentences.SubjectContainsTarget" weight="0.35"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rslrequirementrepresentationsentences.svosentences.PredicateIsPartOfSource/o:rsl.rslrequirementrepresentationsentences.svosentences.PredicateContainsTarget" weight="0.55"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rslrequirementrepresentationsentences.svosentences.ModalVerbIsPartOfSource/o:rsl.rslrequirementrepresentationsentences.svosentences.ModalVerbLinkLinksToTarget" weight="0.1"/>	
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.svosentences.ConditionalSentence">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirementrepresentationsentences.svosentences.ConditionalSentenceContainsConditionalClause" weight="0.45"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirementrepresentationsentences.svosentences.OwnedSentenceContainsMainClause" weight="0.45"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="i:rsl.rslrequirementrepresentationsentences.svosentences.ConditionalConjunctionIsPartOfSource/o:rsl.rslrequirementrepresentationsentences.svosentences.ConjunctionLinkLinksToTarget" weight="0.1"/>	
+			</CompareFunctions>
+		</NodeType>
+		
+		
+		<NodeType name="rsl.rslrequirementrepresentationsentences.representationsentences.NaturalLanguageHypertextSentence">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="StringAttributeUsingEqualsCS" parameter="key" weight="1"/>	
+			</CompareFunctions>
+		</NodeType>
+		
+		
+		
+		
+		
+		<!-- ***************************************************************************** -->
+		<!-- *** DomainElements  and Representations                                   *** -->
+		<!-- ***************************************************************************** -->
+		
+		<NodeType name="rsl.rsldomainelements.domainelementrepresentations.DomainElementRepresentation">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirementrepresentationsentences.representationsentences.RepresentationContainsSentence" weight="1.0"/>
+			</CompareFunctions>
+		</NodeType>
+				
+		<NodeType name="rsl.rsldomainelements.notions.Notion">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.notions.NotionContainsName" weight="0.7"/>
+				<CompareFunction class="ChildrenMatchedOrSimilarIO" weight="0.3"/>
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.notions.DomainStatement">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.notions.StatementContainsName" weight="0.2"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirementrepresentationsentences.representationsentences.RepresentationContainsSentence" weight="0.4"/>
+				<CompareFunction class="ParentsMatchedOrSimilar" weight="0.4"/>
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.actors.Actor">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.domainelements.ElementContainsRepresentation" weight="0.5"/>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.domainelements.ElementContainsName" weight="0.2"/>
+				<CompareFunction class="ChildrenMatchedOrSimilarIO" weight="0.3"/>
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rsldomainelements.systemelements.SystemElement">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rsldomainelements.domainelements.ElementContainsName" weight="0.7"/>
+				<CompareFunction class="ChildrenMatchedOrSimilarIO" weight="0.3"/>
+			</CompareFunctions>
+		</NodeType>
+	
+		<!-- ***************************************************************************** -->
+		<!-- *** Requirements                                                          *** -->
+		<!-- ***************************************************************************** -->
+	
+		<NodeType name="rsl.rslrequirements.requirementsspecifications.Requirement">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirements.requirementsspecifications.RequirementContainsName" weight="0.2"/>
+			<!-- Check if comparing by children matched is better-->	
+			<!--	<CompareFunction class="ChildrenMatchedOrSimilarIO" weight="0.8"/>-->
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirements.requirementsspecifications.RequirementContainsRepresentation" weight="0.8"/>	
+	
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rslrequirements.requirementsspecifications.RSLUseCase">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirements.requirementsspecifications.RequirementContainsName" weight="0.2"/>
+			<!-- Check if comparing by children matched is better-->	
+			<!--	<CompareFunction class="ChildrenMatchedOrSimilarIO" weight="0.8"/>-->
+				<CompareFunction class="RemoteNodesMatchedOrSimilarIO"  parameter="o:rsl.rslrequirements.requirementsspecifications.RequirementContainsRepresentation" weight="0.8"/>
+			</CompareFunctions>
+		</NodeType>
+		
+		<!-- ***************************************************************************** -->
+		<!-- *** RequirementRepresentations                                            *** -->
+		<!-- ***************************************************************************** -->
+		
+		<NodeType name="rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.SentenceList">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="StringAttributeUsingEqualsCS" parameter="name" weight="0.1"/>
+				<CompareFunction class="ChildrenMatchedOrSimilarIO" weight="0.9"/>
+			</CompareFunctions>
+		</NodeType>
+		
+		<NodeType name="rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.ConstrainedLanguageScenario">
+			<Configuration threshold="0.1" />
+			<CompareFunctions>
+				<CompareFunction class="StringAttributeUsingEqualsCS" parameter="name" weight="0.1"/>
+				<CompareFunction class="ChildrenMatchedOrSimilarIO" weight="0.9"/>
+			</CompareFunctions>
+		</NodeType>
+	
+	</Configurations>
+</SiDiffCompare>	
+	

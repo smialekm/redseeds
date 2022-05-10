@@ -1,0 +1,9 @@
+// im Metamodel: 
+// FromConcept ToConcept Role_neu 
+// soll überführt werden in den Shortcut:
+// FromConcept Role_neu ToConcept
+// Jede Zeile ist aufgebaut wie folgt: 
+// FromConcept ToConcept Role_neu 
+// Concepts and roles that are no more needed have to be deleted from
+// DLRelevantConcepts.txt and DefiningPropertiesInRSL.txt and NecessaryPropertiesInRSL.txt
+rsl.rsldomainelements.phrases.NounPhrase rsl.rsldomainelements.terms.Noun rsl.rsldomainelements.phrases.NounPhraseToNoun-shortcut rsl.rsldomainelements.phrases.NounIsPartOfSource-of?rsl.rsldomainelements.phrases.NounLink?rsl.rsldomainelements.phrases.NounLinkLinksToTarget 

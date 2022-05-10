@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tsl"
+    nsURI="http://tsl/1.0" nsPrefix="tsl">
+  <eClassifiers xsi:type="ecore:EClass" name="TestSpecification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" upperBound="-1"
+        eType="#//TestPackage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scUid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" upperBound="-1"
+        eType="#//TestPackage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" upperBound="-1"
+        eType="#//UseCaseTest" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference3" upperBound="-1"
+        eType="#//TestScenario" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Notions" upperBound="-1"
+        eType="#//Notion" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="NFTests" upperBound="-1"
+        eType="#//NFTest" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GUITests" upperBound="-1"
+        eType="#//GUITest" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="BLTests" upperBound="-1"
+        eType="#//BLTest" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Test">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classifierId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="testPrecondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="testPostcondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="testResult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" upperBound="-1"
+        eType="#//TestRelationship" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testParameters" upperBound="-1"
+        eType="#//TestParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UseCaseTest" eSuperTypes="#//Test">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" upperBound="-1"
+        eType="#//UseCaseTestScenario" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ucName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ucTrail" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invocationSource" upperBound="-1"
+        eType="#//TestInvocationRelationship" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UseCaseTestScenario" eSuperTypes="#//Test">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sentences" upperBound="-1"
+        eType="#//UseCaseTestScenarioSentence" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" eType="#//Condition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="postcondition" eType="#//Condition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UseCaseTestScenarioSentence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//UseCaseTestScenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//UseCaseTestScenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ScenarioSentence" eType="#//ScenarioSentence"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestScenario" eSuperTypes="#//Test">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//TestPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" upperBound="-1"
+        eType="#//TestCase" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestCase" eSuperTypes="#//TestInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//UseCaseTestScenarioInstance"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" eType="#//CCondition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="postcondition" eType="#//CCondition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ucName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ucTrail" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ucScenarioName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sentences" upperBound="-1"
+        eType="#//TestCaseSentence" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderNumberGlobal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestCaseSentence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//UseCaseTestScenarioSentence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenarioSentence" eType="#//ScenarioSentence"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//TestDataValuesContext"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UseCaseTestScenarioInstance" eSuperTypes="#//UseCaseTestScenario">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference3" upperBound="-1"
+        eType="#//TestCaseSentence" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ucName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ucTrail" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScenarioSentence" abstract="true" eSuperTypes="#//TestInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SVOSentence" eSuperTypes="#//ScenarioSentence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="directObject" eType="#//DomainObject"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="indirectObject" eType="#//DomainObject"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" eType="#//DomainStatement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlSentence" eSuperTypes="#//ScenarioSentence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invocation" eType="#//TestInvocationRelationship"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionSentence" eSuperTypes="#//ScenarioSentence"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Precondition" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Postcondition" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Test"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestInvocationRelationship" eSuperTypes="#//TestRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//TestRelationship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invocationTarget" eType="#//UseCaseTest"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="includeType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainObject" eSuperTypes="#//TestInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputData" upperBound="-1"
+        eType="#//TestValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainObjectType" eType="#//DomainObjectType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NotionAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NFTest" eSuperTypes="#//Test">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nfrTrail" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GUITest" eSuperTypes="#//Test"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BLTest" eSuperTypes="#//Test"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Notion" eSuperTypes="#//Test">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DomainStatements" upperBound="-1"
+        eType="#//DomainStatement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notionDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notionTrail" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//NotionAttribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainStatement" eSuperTypes="#//Test">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DirectNotion" eType="#//Notion"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="IndirectNotion" eType="#//Notion"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phraseName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phraseDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestParameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domain" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expectedValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestInstance" eSuperTypes="#//Test">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attachedTests" upperBound="-1"
+        eType="#//TestInstance" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NFTestInstance" eSuperTypes="#//TestInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GUITestInstance" eSuperTypes="#//TestInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BLTestInstance" eSuperTypes="#//TestInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TestDataValuesContext"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="DomainObjectType">
+    <eLiterals name="InputData" literal="InputData"/>
+    <eLiterals name="ActionDescription" value="1" literal="ActionDescription"/>
+  </eClassifiers>
+</ecore:EPackage>

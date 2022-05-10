@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="eu.redseeds.transformation.ui.actionSet"
+            label="Transformations..."
+            visible="true">
+         <menu
+               id="redseeds.menu"
+               label="ReDSeeDS">
+            <separator
+                  name="redseedsGroup">
+            </separator>
+         </menu>
+         <action
+               class="eu.redseeds.transformation.ui.actions.TransformationOpenAction"
+               id="eu.redseeds.transformation.ui.actions.TransformationOpenAction"
+               icon="icons/transformation.gif"
+               label="Transformations..."
+               menubarPath="redseeds.menu/redseedsGroup"
+               tooltip="Opens Transformations">
+         </action>
+      </actionSet>
+      <actionSet
+            id="eu.redseeds.transformation.ui.actionSet2"
+            label="Configure Transformations..."
+            visible="true">
+         <menu
+               id="redseeds.menu"
+               label="ReDSeeDS">
+            <separator
+                  name="redseedsGroup">
+            </separator>
+         </menu>
+         <action
+               class="eu.redseeds.transformation.ui.actions.TransformationConfigAction"
+               icon="icons/transformation.gif"
+               id="eu.redseeds.transformation.ui.actions.TransformationConfigAction"
+               label="Configure Transformations..."
+               menubarPath="redseeds.menu/redseedsGroup"
+               tooltip="Configure Transformations">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

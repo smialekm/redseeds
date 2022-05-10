@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Modelio Converter Plug-in
+Bundle-SymbolicName: eu.redseeds.modelio.converter;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: eu.redseeds.modelio.converter.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ eu.redseeds.common;bundle-version="4.0.0",
+ org.eclipse.core.resources;bundle-version="3.6.1"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: ReDSeeDS Team
+Export-Package: eu.redseeds.modelio.converter

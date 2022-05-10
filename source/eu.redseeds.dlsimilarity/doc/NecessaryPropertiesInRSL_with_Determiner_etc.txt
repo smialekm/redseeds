@@ -1,0 +1,103 @@
+//
+// ------------------------------------------------------ Necessary Properties ------:
+//
+rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationContainsRequirementsPackage-of
+rsl.rslrequirements.requirementsspecifications.NestingPackageContainsNestedPackage-of
+rsl.rslrequirements.requirementsspecifications.PackageContainsRequirement-of
+rsl.rslrequirements.requirementsspecifications.RequirementContainsRepresentation-of
+rsl.rslkernel.elements.SentenceListContainsSentence-of
+rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationLinksToDomainSpecification-of
+// links Requ. --> RequirementVocabularyRelationship --> Notion:
+rsl.rslrequirements.requirementsspecifications.VocabularyLinksToSource
+rsl.rslrequirements.requirementrelationships.VocabularyLinksToTarget-of
+// links RSLUseCase and ActivityScenario:
+rsl.rslrequirements.requirementsspecifications.RslUseCaseContainsActivity-of
+// links RSLUseCase --> Usage --> Actor:
+rsl.rslrequirements.requirementsspecifications.UsageLinksToTarget
+rsl.rslrequirements.usecaserelationships.UsageLinksToSource-of
+// Out: links RSLUseCase --> InvocationRelationship --> RSLUseCase:
+rsl.rslrequirements.requirementsspecifications.InvokeLinksToSource
+rsl.rslrequirements.requirementsspecifications.InvokedLinksToTarget-of
+// links RSLUseCase --> Participation --> Actor:
+rsl.rslrequirements.usecaserelationships.SourceParticipationLinksToSource-of
+rsl.rslrequirements.requirementsspecifications.ParticipationLinksToTarget
+// Out: links DomainElement --> DomainElementRelationship --> DomainElement:
+rsl.rsldomainelements.domainelements.ToTargetLinksToSource
+rsl.rsldomainelements.domainelements.ToSourceLinksToTarget-of
+// Out: link Requ. --> NonInvocationRelationship --> Requ.
+rsl.rslrequirements.requirementsspecifications.ToLinksToTarget-of
+rsl.rslrequirements.requirementsspecifications.FromLinksToSource
+// links to InvocationSentence:
+rsl.rslrequirements.usecaserelationships.InvocationLinksToInvokeDescription-of
+rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.ScenarioContainsScenarioStep-of
+// Out: Not used in current IP-cases:
+//rsl.rslrequirementrepresentationsentences.svosentences.ConjunctionLinkContainsTarget-of
+//rsl.rslrequirementrepresentationsentences.svosentences.ConditionalConjunctionIsPartOfSource
+//rsl.rslrequirementrepresentationsentences.svosentences.ConditionalSentenceContainsConditionalClause-of
+//rsl.rslrequirementrepresentationsentences.svosentences.OwnedSentenceContainsMainClause-of
+//rsl.rslrequirementrepresentationsentences.svosentences.ModalVerbLinkLinksToTarget-of
+//rsl.rslrequirementrepresentationsentences.svosentences.ModalVerbIsPartOfSource
+// links SvoSentence and Subject:
+rsl.rslrequirementrepresentationsentences.svosentences.SubjectIsPartOfSource
+// links Subject and NounPhrase:
+rsl.rslrequirementrepresentationsentences.svosentences.SubjectContainsTarget-of
+// links Subject and DomainElement:
+rsl.rslrequirementrepresentationsentences.svosentences.LinkingSubjectLinksToDomainElement-of
+// links SVOSentence and Predicate:
+rsl.rslrequirementrepresentationsentences.svosentences.PredicateIsPartOfSource
+// links Predicate and VerbPhrase:
+rsl.rslrequirementrepresentationsentences.svosentences.PredicateContainsTarget-of
+// links Predicate and DomainStatment:
+rsl.rslrequirementrepresentationsentences.svosentences.LinkingPredicateLinksToDomainStatement-of
+// links SVOsentence and ActorOrSystemElement:
+rsl.rslrequirementrepresentationsentences.svosentences.SentenceLinksToRecipient-of
+// links ActorOrSystemElement and NounPhrase:
+rsl.rsldomainelements.domainelements.ElementContainsName-of
+// links DomainElement and DomainStatement:
+rsl.rsldomainelements.domainelements.DomainElementContainsStatement-of
+rsl.rsldomainelements.domainelements.DomainSpecificationContainsDomainElementsPackage-of
+rsl.rsldomainelements.domainelements.NestingPackageContainsNestedPackage-of
+// links DomainSpecification and SystemElement:
+rsl.rsldomainelements.domainelements.SpecificationContainsSystemUnderDevelopment-of
+// links DomainStatement and Phrase:
+rsl.rsldomainelements.notions.StatementContainsName-of
+// links Notion and NOunPhrase:
+rsl.rsldomainelements.notions.NotionContainsName-of
+rsl.rsldomainelements.notions.PackageContainsNotion-of
+rsl.rsldomainelements.notions.NestingPackageContainsNestedPackage-of
+rsl.rsldomainelements.systemelements.PackageContainsSystemElement-of
+rsl.rsldomainelements.systemelements.NestingPackageContainsNestedPackage-of
+rsl.rsldomainelements.actors.NestingPackageContainsNestedPackage-of
+rsl.rsldomainelements.actors.PackageContainsActor-of
+// links ComplexVerbphrase and SimpleVerbPhrase:
+rsl.rsldomainelements.phrases.ComplexVerbPhraseContainsSimpleVerbPhrase-of
+// links SimpleVerbPhrase to PhraseVerbLink:
+rsl.rsldomainelements.phrases.VerbIsPartOfSource
+// links VerbPhrase and NounPhrase:
+rsl.rsldomainelements.phrases.VerbPhraseContainsObject-of
+// links NounPhrase and NounLink:
+rsl.rsldomainelements.phrases.NounIsPartOfSource
+// links NounPhrase and DeterinerLink:
+rsl.rsldomainelements.phrases.DeterminerIsPartOfSource
+// links NounPhrase and ModifierLink:
+rsl.rsldomainelements.phrases.ModifierIsPartOfSource
+// links NounLink to Noun:
+rsl.rsldomainelements.phrases.NounLinkLinksToTarget-of
+// links DeterminerLink and Derterminer:
+rsl.rsldomainelements.phrases.DeterminerLinkLinksToTarget-of
+// links ModifierLink and Modifier:
+rsl.rsldomainelements.phrases.ModifierLinkLinksToTarget-of
+// links PhraseHyperlink and Phrase:
+rsl.rsldomainelements.phrases.PhraseHyperlinkLinksToTarget-of
+// links PhrasePrepositionLink and Preposition:
+rsl.rsldomainelements.phrases.PrepositionLinkLinksToTarget-of
+// links PhraseVerbLink and Verb:
+rsl.rsldomainelements.phrases.VerbLinkLinksToTarget-of
+// links TermHyperlink and Term:
+rsl.rsldomainelements.terms.TermHyperlinkLinksToTarget-of
+// links Terminology and Term:
+rsl.rsldomainelements.terms.TerminologyContainsTerm-of
+// links VerbPhrase and PhrasePrepositonLink:
+rsl.rsldomainelements.phrases.PrepositionIsPartOfSource
+// links Term and Synset:
+rsl.rsldomainelements.terms.TermLinksToWordNetEntry-of

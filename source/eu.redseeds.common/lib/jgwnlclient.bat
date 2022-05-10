@@ -1,0 +1,1 @@
+java -Xmx200M -cp jgralab_carnotaurus.jar;jgwnl.jar de.uni_koblenz.jgwnl.client.JGWNLClient -s 127.0.0.1

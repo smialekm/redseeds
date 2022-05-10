@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="usecasediagram_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="usecasediagram_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="usecasediagram.diagram.part.UseCaseDiagramDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/UsecasediagramDiagramFile.gif"
+         extensions="usecasediagram_diagram"
+         default="true"
+         class="usecasediagram.diagram.part.UseCaseDiagramDiagramEditor"
+         matchingStrategy="usecasediagram.diagram.part.UseCaseDiagramMatchingStrategy"
+         contributorClass="usecasediagram.diagram.part.UseCaseDiagramDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="usecasediagram.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/UsecasediagramDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="usecasediagram.diagram.part.UseCaseDiagramCreationWizard"
+  	     id="usecasediagram.diagram.part.UseCaseDiagramCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="eu.remics.gmf.diagram.InitDiagram"
+            nameFilter="*.usecasediagram"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="usecasediagram.diagram.part.UseCaseDiagramInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="eu.remics.gmf.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="false"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="UseCaseDiagramPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="usecasediagram.diagram.part.UseCaseDiagramDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="UseCaseDiagramPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="usecasediagram.diagram.part.UseCaseDiagramDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="usecasediagram.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="eu.remics.gmf.diagram.general"
+            name="%prefpage.eu.remics.gmf.diagram.general"
+            class="usecasediagram.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="eu.remics.gmf.diagram.appearance"
+            name="%prefpage.eu.remics.gmf.diagram.appearance"
+            category="eu.remics.gmf.diagram.general"
+            class="usecasediagram.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="eu.remics.gmf.diagram.connections"
+            name="%prefpage.eu.remics.gmf.diagram.connections"
+            category="eu.remics.gmf.diagram.general"
+            class="usecasediagram.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="eu.remics.gmf.diagram.printing"
+            name="%prefpage.eu.remics.gmf.diagram.printing"
+            category="eu.remics.gmf.diagram.general"
+            class="usecasediagram.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="eu.remics.gmf.diagram.rulersAndGrid"
+            name="%prefpage.eu.remics.gmf.diagram.rulersAndGrid"
+            category="eu.remics.gmf.diagram.general"
+            class="usecasediagram.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="eu.remics.gmf.diagram"
+            labelProvider="usecasediagram.diagram.sheet.UseCaseDiagramSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="eu.remics.gmf.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="eu.remics.gmf.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="usecasediagram.diagram.sheet.UseCaseDiagramPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="usecasediagram.diagram.navigator.UseCaseDiagramAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="usecasediagram.diagram.providers.UseCaseDiagramViewProvider">
+         <Priority name="Lowest"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UseCaseDiagram"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="usecasediagram.diagram.providers.UseCaseDiagramEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="UseCaseDiagram"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,2002"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001,4002"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5001,5002"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value=""/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="usecasediagram.diagram.providers.UseCaseDiagramModelingAssistantProvider">
+         <Priority name="Lowest"/>
+         <object class="usecasediagram.diagram.edit.parts.UseCaseDiagramEditPart" id="UseCaseDiagram_1000"/>
+         <object class="usecasediagram.diagram.edit.parts.ActorEditPart" id="Actor_2001"/>
+         <object class="usecasediagram.diagram.edit.parts.UseCaseEditPart" id="UseCase_2002"/>
+         <context elements="UseCaseDiagram_1000,Actor_2001,UseCase_2002"/>
+      </modelingAssistantProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="usecasediagram.diagram.providers.UseCaseDiagramIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="usecasediagram.diagram.providers.UseCaseDiagramParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http://usecasediagram/1.0">
+         <metamodelType
+               id="eu.remics.gmf.diagram.UseCaseDiagram_1000"
+               name="%metatype.name.UseCaseDiagram_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="UseCaseDiagram"
+               edithelper="usecasediagram.diagram.edit.helpers.UseCaseDiagramEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://usecasediagram/1.0">
+         <metamodelType
+               id="eu.remics.gmf.diagram.Actor_2001"
+               name="%metatype.name.Actor_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Actor"
+               edithelper="usecasediagram.diagram.edit.helpers.ActorEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://usecasediagram/1.0">
+         <metamodelType
+               id="eu.remics.gmf.diagram.UseCase_2002"
+               name="%metatype.name.UseCase_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="UseCase"
+               edithelper="usecasediagram.diagram.edit.helpers.UseCaseEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://usecasediagram/1.0">
+         <metamodelType
+               id="eu.remics.gmf.diagram.Invoke_4001"
+               name="%metatype.name.Invoke_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Invoke"
+               edithelper="usecasediagram.diagram.edit.helpers.InvokeEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://usecasediagram/1.0">
+         <metamodelType
+               id="eu.remics.gmf.diagram.Association_4002"
+               name="%metatype.name.Association_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Association"
+               edithelper="usecasediagram.diagram.edit.helpers.AssociationEditHelper">
+            <param name="semanticHint" value="4002"/>
+         </metamodelType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="eu.remics.gmf.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="eu.remics.gmf.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="eu.remics.gmf.diagram.TypeContext">
+         <elementType ref="eu.remics.gmf.diagram.UseCaseDiagram_1000"/>
+         <elementType ref="eu.remics.gmf.diagram.Actor_2001"/>
+         <elementType ref="eu.remics.gmf.diagram.UseCase_2002"/>
+         <elementType ref="eu.remics.gmf.diagram.Invoke_4001"/>
+         <elementType ref="eu.remics.gmf.diagram.Association_4002"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="eu.remics.gmf.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="eu.remics.gmf.diagram"
+           properties="isURIEditorInput"
+           class="usecasediagram.diagram.part.UseCaseDiagramUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="eu.remics.gmf.diagram.resourceContent"/>
+			<contentExtension pattern="eu.remics.gmf.diagram.domainResourceContent"/>
+            <contentExtension pattern="eu.remics.gmf.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="eu.remics.gmf.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="eu.remics.gmf.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="usecasediagram.diagram.navigator.UseCaseDiagramNavigatorContentProvider" 
+            labelProvider="usecasediagram.diagram.navigator.UseCaseDiagramNavigatorLabelProvider"
+            icon="icons/obj16/UsecasediagramDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="usecasediagram_diagram"/>
+               </and>
+               <instanceof value="usecasediagram.diagram.navigator.UseCaseDiagramAbstractNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="usecasediagram.diagram.navigator.UseCaseDiagramAbstractNavigatorItem"/>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="eu.remics.gmf.diagram.navigatorSorter" 
+               class="usecasediagram.diagram.navigator.UseCaseDiagramNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="usecasediagram_diagram"/>
+                  </and>
+                  <instanceof value="usecasediagram.diagram.navigator.UseCaseDiagramAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="eu.remics.gmf.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="usecasediagram.diagram.navigator.UseCaseDiagramDomainNavigatorContentProvider" 
+            labelProvider="usecasediagram.diagram.navigator.UseCaseDiagramDomainNavigatorLabelProvider"
+            icon="icons/obj16/UsecasediagramDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="usecasediagram"/>
+               </and>
+               <instanceof value="usecasediagram.diagram.navigator.UseCaseDiagramDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="usecasediagram.diagram.navigator.UseCaseDiagramDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="eu.remics.gmf.diagram.navigatorActionProvider"
+            class="usecasediagram.diagram.navigator.UseCaseDiagramNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="usecasediagram.diagram.navigator.UseCaseDiagramAbstractNavigatorItem"/>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="eu.remics.gmf.diagram.navigatorLinkHelper"
+            class="usecasediagram.diagram.navigator.UseCaseDiagramNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="eu.remics.gmf.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="usecasediagram.diagram.navigator.UseCaseDiagramAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="usecasediagram.diagram.part.UseCaseDiagramDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="usecasediagram.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="usecasediagram.diagram.updateDiagram"
+         contextId="usecasediagram.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="usecasediagram.diagram.part.UseCaseDiagramDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="eu.remics.gmf.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="usecasediagram.diagram.part.UseCaseDiagramDiagramEditorID"
+         defaultHandler="usecasediagram.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.common.ui.services.dnd.dragDropListenerProviders">
+      <DragDropListenerProvider
+            class="usecasediagram.diagram.dnd.DiagramDragDropListenerProvider"
+            id="eu.remics.gmf.diagram.DiagramDragDropListenerProvider">
+         <Priority
+               name="Lowest">
+         </Priority>
+         <ViewId
+               id="eu.remics.gmf.diagram.usecasediagram.diagram.part.UseCaseDiagramDiagramEditor">
+            <ElementType
+                  class="eu.remics.gmf.usecasediagram.UseCase">
+               <OperationType
+                     operation="drop">
+                  <TransferId
+                        transferId="eu.remics.gmf.diagram.usecasediagram.diagram.dnd.DiagramElementTransfer">
+                  </TransferId>
+               </OperationType>
+            </ElementType>
+         </ViewId>
+      </DragDropListenerProvider>
+   </extension>
+   
+<extension  point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+	<?gmfgen generated="false"?>
+ 	<contributionItemProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider" checkPluginLoaded="false">
+		<Priority name="Highest"/>
+ 		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+ 			<popupStructuredContributionCriteria objectClass="usecasediagram.diagram.edit.parts.UseCaseDiagramEditPart" />
+				<popupPredefinedItem path="/diagramAddMenu/" id="addTextAction" remove="true"/>
+				<popupPredefinedItem path="/diagramAddMenu/" id="addGeoShapesGroup" remove="true"/>
+				<popupPredefinedItem path="/diagramAddMenu/" id="addGeoShapes2Group" remove="true"/>
+ 				
+ 				<popupMenuGroup path="/diagramAddMenu/" separator="true" id="addDiagramUseCaseGroup"/>
+ 				<popupAction path="/diagramAddMenu/addDiagramUseCaseGroup" id="addUseCaseAction"/>
+ 				<popupAction path="/diagramAddMenu/addDiagramUseCaseGroup" id="addActorAction"/>
+ 				
+ 		</popupContribution>
+ 		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+ 			<popupStructuredContributionCriteria objectClass="org.eclipse.gef.editparts.AbstractGraphicalEditPart" />
+				<popupPredefinedItem id="editMenu" remove="true"/>
+ 		</popupContribution>
+ 	</contributionItemProvider>
+</extension>
+
+<extension point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders"> 
+  <paletteProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DefaultPaletteProvider">
+    <Priority name="Low"/>
+      <contribution>
+     	<predefinedEntry id="standardGroup/noteStack/textTool" remove="true"/> 
+      </contribution>
+      <editor
+            id="usecasediagram.diagram.part.UseCaseDiagramDiagramEditorID">
+      </editor>
+  </paletteProvider>
+</extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="ReDSeeDS Engine" uid="ReDSeeDS Engine" id="eu.redseeds.engine.ide" application="org.eclipse.ui.ide.workbench" version="0.7.4.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="/eu.redseeds.engine/about.bmp"/>
+      <text>
+         ReDSeeDS Engine version 0.7.4
+http://www.redseeds.eu/ http://redseeds.sourceforge.net/ http://www.remics.eu/
+
+This tool uses JGraLab http://jgralab.uni-koblenz.de/ to manipulate data.
+
+Visit http://p.sf.net/redseeds/Legal for a full list of products used
+or check individual plugins for details.
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/eu.redseeds.engine/redseeds.gif"/>
+
+   <splash
+      location="eu.redseeds.engine"
+      startupProgressRect="0,256,185,10"
+      startupMessageRect="190,250,180,20"
+      startupForegroundColor="000000" />
+   <launcher name="redseeds">
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+      <windows include="true">jre1.6.0</windows>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="eu.redseeds.feature" version="4.3.0.qualifier"/>
+      <feature id="org.eclipse.platform" version="3.6.2.r362_v20110210-9gF78Gs1FrIGnHDHWkEcopoN8AmxeZflGDGKQi"/>
+      <feature id="org.eclipse.cvs" version="1.2.1.r362_v20101111-7B77FKv99HL0GvIAF99I8H14B7E"/>
+      <feature id="org.eclipse.jdt" version="3.6.2.r362_v20101117-0800-7z8XFW6FLFlmjJcvz03jyeFBLS_F"/>
+      <feature id="org.eclipse.rcp" version="3.6.2.r362_v20101104-9SAxFMKFkSAqi8axkv1ZjegmiBLY"/>
+      <feature id="org.eclipse.pde" version="3.6.2.r362_v20110203-7b7mFL2FET3dhHalh1iNZtL"/>
+   </features>
+
+
+</product>

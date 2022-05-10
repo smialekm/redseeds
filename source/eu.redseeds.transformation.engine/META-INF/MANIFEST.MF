@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transformation Engine
+Bundle-SymbolicName: eu.redseeds.transformation.engine;singleton:=true
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.transformation.engine.Activator
+Bundle-Vendor: ReDSeeDS Team
+Require-Bundle: org.eclipse.core.runtime,
+ eu.redseeds.common,
+ org.eclipse.jface,
+ eu.redseeds.scl.model,
+ org.eclipse.core.resources,
+ eu.redseeds.sc.current.repository,
+ org.eclipse.ui,
+ eu.redseeds.ea.converter
+Eclipse-LazyStart: true
+Export-Package: eu.redseeds.transformation.engine.interfaces
+Bundle-ClassPath: .,
+ lib/jgralabLxImpl.jar,
+ lib/LxRuntime.jar
+Import-Package: eu.remics.recovery.model
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

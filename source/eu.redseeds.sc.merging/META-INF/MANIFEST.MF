@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SC Merging
+Bundle-SymbolicName: eu.redseeds.sc.merging
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.sc.merging.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ eu.redseeds.common,
+ eu.redseeds.sc.current.repository,
+ eu.redseeds.sc.project,
+ eu.redseeds.scl.model,
+ eu.redseeds.terminology.model,
+ eu.redseeds.engine,
+ org.eclipse.ui,
+ org.eclipse.core.resources
+Eclipse-LazyStart: true
+Bundle-Vendor: ReDSeeDS Team
+Export-Package: eu.redseeds.sc.merging,
+ eu.redseeds.sc.merging.conflicts,
+ eu.redseeds.sc.merging.dialogs,
+ eu.redseeds.sc.merging.resolvers,
+ eu.redseeds.sc.merging.views
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

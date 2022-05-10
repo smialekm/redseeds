@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <viewerContribution
+            id="test.contribution1"
+            targetID="eu.redseeds.engine.navigator.view">
+<!--         <visibility>
+         	<or>
+	         	<objectClass
+	               name="org.eclipse.core.resources.IProject"/>
+				<objectClass 
+					name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO"/>
+				<objectClass 
+					name="eu.redseeds.scl.model.rsl.rsldomainelements.domainelements.DomainSpecificationDTO"/>
+				<objectClass 
+					name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementDTO"/>
+				<objectClass 
+					name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsPackageDTO"/>
+				<objectClass 
+					name="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorDTO"/>
+				<objectClass 
+					name="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorsPackageDTO"/>
+				<objectClass 
+					name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionDTO"/>
+				<objectClass 
+					name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionsPackageDTO"/>
+				<objectClass 
+					name="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementDTO"/>
+				<objectClass 
+					name="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementsPackageDTO"/>
+         	</or>
+         </visibility>-->
+         <menu
+            id="eu.redseeds.engine.navigator.view.popup.new" 
+            path="additions" 
+            label="New"> 
+         </menu> 
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddClipboardAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddClipboardAction"
+               label="Clipboard"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/Clipboard">
+               <enablement>
+               		<objectClass name="org.eclipse.core.resources.IProject"/>           
+               </enablement>
+               
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddUseCaseAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddUseCaseAction"
+               label="Use Case"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/requirements">
+               <enablement>
+               		<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsPackageDTO"/>           
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddRequirementAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddRequirementAction"
+               label="Requirement"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/requirements">
+               <enablement>
+               		<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsPackageDTO"/>           
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddRequirementsPackageAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddRequirementsPackageAction"
+               label="Requirements Package"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/requirements">
+               <enablement>
+               	<or>
+               		<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsPackageDTO"/>   
+               		<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO"/>
+               	</or>        
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddActorAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddActorAction"
+               label="Actor"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/actor">   
+               <enablement>
+               		<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorsPackageDTO"/>           
+               </enablement>            
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddActorsPackageAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddActorsPackageAction"
+               label="Actors Package"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/actor">   
+               <enablement>
+               		<or>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorsPackageDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.domainelements.DomainSpecificationDTO"/>
+               		</or>           
+               </enablement>            
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddSysElementsPackageAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddSysElementsPackageAction"
+               label="System Elements Package"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/sysElements">
+               <enablement>
+               		<or>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementsPackageDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.domainelements.DomainSpecificationDTO"/>
+               		</or>           
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddSysElementAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddSysElementAction"
+               label="System Element"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/sysElements">   
+               <enablement>
+               		<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementsPackageDTO"/>           
+               </enablement>            
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddNotionsPackageAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddNotionsPackageAction"
+               label="Notions Package"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/notion">
+               <enablement>
+               		<or>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionsPackageDTO"/>  
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.domainelements.DomainSpecificationDTO"/>
+               		</or>         
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddNotionAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddNotionAction"
+               label="Notion"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/notion">
+               <enablement>
+               		<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionsPackageDTO"/>           
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddDomainStatementAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddDomainStatementAction"
+               label="Domain Statement"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/notion">
+               <enablement>
+               		<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionDTO"/>           
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.CreateDomainDiagramAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddDomainDiagramAction"
+               label="Domain Extended Diagram"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/rsldl">
+               <enablement>
+               		<and>
+               		<objectClass name="org.eclipse.core.resources.IFile"/>           
+               		<objectState name="extension" value="rsldl"/>
+               		</and>
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddDomainAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddDomainAction"
+               label="Domain"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/rsldl">
+               <enablement>
+               		<and>
+               		<objectClass name="org.eclipse.core.resources.IFile"/>           
+               		<objectState name="extension" value="rsldl"/>
+               		</and>
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.CreateRSLVisualizationAction"
+               id="eu.redseeds.sc.current.ui.actions.CreateRSLVisualizationAction"
+               label="Generate Requirements Visualization"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.generate/other">
+            <enablement>
+               <objectClass
+                     name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO">
+               </objectClass>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.CreateAnalysisAction"
+               id="eu.redseeds.sc.current.ui.actions.CreateAnalysisAction"
+               label="Generate Analysis"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.generate/other">
+            <enablement>
+               <objectClass
+                     name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO">
+               </objectClass>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.CreateArchitectureAction"
+               id="eu.redseeds.sc.current.ui.actions.CreateArchitectureAction"
+               label="Generate Architecture"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.generate/other">
+            <enablement>
+                  <objectClass
+                        name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO">
+                  </objectClass>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.CreateDetailedDesignAction"
+               id="eu.redseeds.sc.current.ui.actions.CreateDetailedDesign"
+               label="Generate Detailed Design"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.generate/other">
+            <enablement>
+                  <objectClass
+                        name="eu.redseeds.scl.model.sclkernel.ArchitecturalModelDTO">
+                  </objectClass>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.DeleteAction"
+               enablesFor="+"
+               id="eu.redseeds.sc.current.ui.actions.DeleteReqsAction"
+               label="Delete"
+               menubarPath="group">
+               <enablement>
+               		<or>
+               			<objectClass name="eu.redseeds.scl.model.sclkernel.ClipboardDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsPackageDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorsPackageDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionsPackageDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementsPackageDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.DomainStatementDTO"/>
+               		</or>	
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.RenameAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.RenamePacksAction"
+               label="Rename"
+               menubarPath="group">
+               <enablement>
+               		<or>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsPackageDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorsPackageDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionsPackageDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementsPackageDTO"/>
+               		</or>	
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.ValidateAction"
+               enablesFor="+"
+               id="eu.redseeds.sc.current.ui.actions.ValidateElemAction"
+               label="Validate"
+               menubarPath="group">
+               <enablement>
+               		<or>
+               			<objectClass name="org.eclipse.core.resources.IProject"/>
+               			<objectClass name="eu.redseeds.scl.model.sclkernel.SoftwareCaseDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.sclkernel.ClipboardDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.sclkernel.ArchitecturalModelDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.sclkernel.DetailedDesignModelDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsPackageDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.UseCaseDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.domainelements.DomainSpecificationDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorsPackageDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionsPackageDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementsPackageDTO"/>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementDTO"/>
+               		</or>
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.MakePatternAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.MakePatternAction"
+               label="Convert Req Package &lt;=&gt; ALP"
+               menubarPath="group">
+               <enablement>
+               		<objectClass
+                        name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsPackageDTO">
+                  	</objectClass>
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.DeassignScenarioAction"
+               id="eu.redseeds.sc.current.ui.actions.DeassignScenarioAction"
+               label="Detach scenario"
+               menubarPath="group">
+            <enablement>
+               <objectClass
+                     name="eu.redseeds.scl.model.rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.ConstrainedLanguageScenarioDTO">
+               </objectClass>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.FindSimilarScenariosAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.FindSimilarScenariosAction"
+               label="Show similar scenarios"
+               menubarPath="group">
+            <enablement>
+               <objectClass
+                     name="org.eclipse.core.resources.IProject">
+               </objectClass>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.CreateUCDiagramAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.CreateUCDiagramAction"
+               label="Use Cases Diagram"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/requirements">
+            <enablement>
+               <objectClass
+                     name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsPackageDTO">
+               </objectClass>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.CreateNotionsDiagramAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.CreateNotionsDiagramAction"
+               label="Notions Diagram"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.new/notion">
+            <enablement>
+               <objectClass
+                     name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionsPackageDTO">
+               </objectClass></enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.GenerateMVPCodeAction"
+               id="eu.redseeds.sc.current.ui.actions.GenerateMVPCodeAction"
+               label="From RSL to Java"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.generate/MVP">
+            <enablement>
+               <objectClass
+                     name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO">
+               </objectClass>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.GenerateDLCodeAction"
+               id="eu.redseeds.sc.current.ui.actions.GenerateDLCodeAction"
+               label="Generate Domain Code"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.generate/MVP">
+            <enablement>
+               <and>
+               	<objectClass
+                     name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO">
+               	</objectClass>
+               	<objectState name="RSLDLEnabled" value="true"/>
+               </and>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.InitializeExtendedDomainModelAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.InitializeExtendedDomainModelAction"
+               label="Initialize Extended Domain Model"
+               menubarPath="group">
+               <enablement>
+               		<and>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO"/>           
+               			<objectState name="canInitializeRSLDL" value="true"/>
+               		</and>
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.FillExtendedDomainModelAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.FillExtendedDomainModelAction"
+               label="Fill Extended Domain Model"
+               menubarPath="group">
+               <enablement>
+               	  <or>
+               		<and>
+               			<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO"/>           
+               			<objectState name="RSLDLInitialized" value="true"/>
+               		</and>
+               		<and>
+               			<objectClass name="org.eclipse.core.resources.IFile"/>           
+               			<objectState name="extension" value="rsldl"/>
+               		</and>
+               	  </or>
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddSensesAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.AddSensesAction"
+               label="Add senses for all terms"
+               menubarPath="group">
+            <enablement>
+               <objectClass
+                     name="org.eclipse.core.resources.IProject">
+               </objectClass>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.DeleteGeneratedAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.DeleteGeneratedAction"
+               label="Delete generated artifacts"
+               menubarPath="group">
+            <enablement>
+               <objectClass
+                     name="eu.redseeds.scl.model.sclkernel.SoftwareCaseArtifact">
+               </objectClass>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.TransferRequirementsAction"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.TransferRequirementsAction"
+               label="Transfer requirements to CASE tool"
+               menubarPath="group">
+            <enablement>
+               <objectClass
+                     name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO">
+               </objectClass>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.CreateNotionDiagramForUseCase"
+               enablesFor="1"
+               id="eu.redseeds.sc.current.ui.actions.CreateNotionDiagramForUseCase"
+               label="Create Notion Diagram For Use Case"
+               menubarPath="group">
+               <enablement>
+               	<and>
+               		<objectClass name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.UseCaseDTO"/> 
+               		<objectState name="NotionDiagramExists" value="false"/>
+               	</and>
+               </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.CreateConceptFromDataViewsAction"
+               enablesFor="+"
+               id="eu.redseeds.sc.current.ui.actions.CreateConceptFromDataViewsAction"
+               label="Create concept from data views"
+               menubarPath="group">
+            <enablement>
+            	<and>
+               		<objectClass
+                     	name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionDTO">
+               		</objectClass>
+               		<objectState name="type" value="dataviews"/> 
+               	</and>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.CreateDataViewFromConceptsAction"
+               enablesFor="+"
+               id="eu.redseeds.sc.current.ui.actions.CreateDataViewFromConceptsAction"
+               label="Create data view from concepts"
+               menubarPath="group">
+            <enablement>
+            	<and>
+               		<objectClass
+                     	name="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionDTO">
+               		</objectClass>
+               		<objectState name="type" value="concept"/> 
+               	</and>
+            </enablement>
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.GenerateModelLayerCodeAction"
+               id="eu.redseeds.sc.current.ui.actions.GenerateModelLayerCodeAction"
+               label="Generate Model layer code (according to MVC pattern)"
+               menubarPath="eu.redseeds.engine.navigator.view.popup.generate/MVP">
+            <enablement>
+               <objectClass
+                     name="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO">
+               </objectClass>
+            </enablement>
+         </action>
+         <menu
+               id="eu.redseeds.engine.navigator.view.popup.generate"
+               label="Generate"
+               path="additions">
+         </menu>
+      </viewerContribution>
+   </extension>
+   <extension id="validationProblem" point="org.eclipse.core.resources.markers">
+	   <super type="org.eclipse.core.resources.problemmarker"/>
+	   <!-- <super type="eu.redseeds.sc.current.ui.validation"/> -->
+	   <attribute name="sclElementID"/>
+	   <attribute name="validationProblemID"/>
+	   <persistent value="true"/>
+   </extension>
+   <extension point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+         markerType="org.eclipse.core.resources.problemmarker"
+         class="eu.redseeds.sc.current.ui.validation.fixes.FixAdapter"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="eu.redseeds.sc.current.ui.actions.AddRequirementsPackageActionSet"
+            label="Create a new Requirements Package"
+            visible="true">
+          <action
+               class="eu.redseeds.sc.current.ui.actions.AddRequirementsPackageAction"
+               definitionId="eu.redseeds.sc.current.ui.actions.AddRequirementsPackageCommand"
+               id="eu.redseeds.sc.current.ui.actions.AddRequirementsPackageAction"
+               label="Create a new Requirements Package">
+         </action>
+         <action
+               class="eu.redseeds.sc.current.ui.actions.AddRequirementAction"
+               definitionId="eu.redseeds.sc.current.ui.actions.AddRequirementCommand"
+               id="eu.redseeds.sc.current.ui.actions.AddRequirementAction"
+               label="Create a new requirement">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+         <command
+               id="eu.redseeds.sc.current.ui.actions.AddRequirementsPackageCommand"
+               categoryId="eu.redseeds.category"
+               name="Create a new Requirements Package"
+               defaultHandler="eu.redseeds.sc.current.ui.actions.DefaultActionHandler">
+         </command>
+         <command
+               id="eu.redseeds.sc.current.ui.actions.AddRequirementCommand"
+               categoryId="eu.redseeds.category"
+               name="Create a new Requirement"
+               defaultHandler="eu.redseeds.sc.current.ui.actions.DefaultActionHandler">
+         </command>
+         <category
+            id="eu.redseeds.category"
+            name="ReDSeeDS">
+      	</category>
+   </extension>
+</plugin>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="Palette"
+      default="//@palette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Objects"
+        description=""
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Entity"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Property"
+          description=""/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Primitive"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Identity Condition"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Inheritance Condition"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Validity Condition"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Relationships"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Data Based Reference"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Pattern Based Reference"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Alghoritmic Transition"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Pattern Based Transition"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Connections"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Relationship Participation"
+          description=""/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Relationship Source Participation"
+          description=""/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Relationship Target Participation"
+          description=""/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Attribute Link"/>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

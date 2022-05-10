@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="eu.redset.engine.perspective.PerspectiveFactory"
+            icon="icons/TSL Logo_eclipse.bmp"
+            id="eu.redset.engine.perspective"
+            name="ReDSeT">
+      </perspective>
+   </extension>
+
+</plugin>

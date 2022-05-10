@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="eu.redseeds.common.preferences.PreferencesInitializer"/>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="eu.redseeds.common.preferences.RedseedsGeneralPreferencePage"
+            id="eu.redseeds.common.general"
+            name="ReDSeeDS">
+      </page>
+      <page
+            category="eu.redseeds.common.general"
+            class="eu.redseeds.common.preferences.RedseedsGenerationPreferencePage"
+            id="eu.redseeds.common.generation"
+            name="Generation">
+      </page>
+      <page
+            category="eu.redseeds.common.generation"
+            class="eu.redseeds.common.preferences.RedseedsModelioConfigurationPreferencePage"
+            id="eu.redseeds.common.generation.modelio.configuration"
+            name="Modelio configuration">
+      </page>
+      <page
+            category="eu.redseeds.common.general"
+            class="eu.redseeds.common.preferences.RedseedsKeywordsPreferencePage"
+            id="eu.redseeds.common.keywords"
+            name="Keywords">
+      </page>
+      <page
+            category="eu.redseeds.common.keywords"
+            class="eu.redseeds.common.preferences.RedseedsNotionKindsKeywordsPreferencePage"
+            id="eu.redseeds.common.notionkindskeywords"
+            name="Notion types keywords">
+      </page>
+      <page
+            category="eu.redseeds.common.keywords"
+            class="eu.redseeds.common.preferences.RedseedsActionTypesKeywordsPreferencePage"
+            id="eu.redseeds.common.actiontypeskeywords"
+            name="Action types keywords">
+      </page>
+   </extension>
+
+</plugin>

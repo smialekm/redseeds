@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SCQL Query Store
+Bundle-SymbolicName: eu.redseeds.sc.query.store
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.sc.query.store.Activator
+Bundle-Vendor: ReDSeeDS Team
+Require-Bundle: org.eclipse.core.runtime
+Eclipse-LazyStart: true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

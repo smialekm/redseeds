@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SDSL Editor
+Bundle-SymbolicName: eu.redseeds.sc.editor.sdsl;singleton:=true
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.sc.editor.sdsl.Activator
+Bundle-Vendor: ReDSeeDS Team
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.debug.ui,
+ eu.redseeds.ea.converter,
+ eu.redseeds.transformation.engine,
+ eu.redseeds.transformation.store,
+ eu.redseeds.common,
+ eu.redseeds.scl.model,
+ eu.redseeds.sc.current.repository
+Eclipse-LazyStart: true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

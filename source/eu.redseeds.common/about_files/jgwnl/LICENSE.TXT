@@ -1,0 +1,97 @@
+University of Koblenz-Landau
+Institute for Software Technology
+Universitaetsstr. 1
+D-56070 Koblenz, Germany
+http://www.uni-koblenz.de/~ist
+
+SOFTWARE LICENSE AGREEMENTS
+
+JGWNL Binary License for use with the ReDSeeDS Engine
+
+0. Preamble.
+
+THE INSTITUTE FOR SOFTWARE TECHNOLOGY ("IST") IS WILLING TO LICENSE THE BELOW DEFINED SOFTWARE TO YOU ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED IN THIS SOFTWARE LICENSE AGREEMENT ("AGREEMENT").
+
+PLEASE READ THE AGREEMENT CAREFULLY. BY DOWNLOADING OR INSTALLING THIS SOFTWARE, YOU ACCEPT THE FULL TERMS OF THE AGREEMENT.
+
+Please note that JGWNL is also available as free software under the terms and conditions of the GNU General Public License (GPL). This is the primary license model for JGWNL. However, this Agreement permits the use and redistribution of JGWNL as part of the ReDSeeDS Engine which is licensed under the GNU Lesser General Public License (LGPL) and distributed with parts of the Eclipse platform licensed under the Eclipse Common Licence (ECL).
+
+
+1. Definitions. 
+"Software" means all the portions of the JGWNL distribution provided by IST only in binary code form, and including any updates or error corrections or documentation provided by IST under this Agreement. No source code is covered by this Agreement.
+
+"ReDSeeDS Engine" means the publicly available parts of software developed in the ReDSeeDS project (http://redseeds.eu).
+
+
+2. Permitted Uses. 
+Subject to the terms and conditions of this Agreement, IST grants you a non-exclusive, non-transferable, limited license without fees to
+
+(a) reproduce and use internally the Software for the purposes of developing or running ReDSeeDS Engine or modified versions of ReDSeeDS Engine. 
+
+(b) reproduce and distribute the Software (and also portions of Software identified as Redistributable in the documentation accompanying Software), provided that you 
+
+ (i) distribute the Software or Redistributables bundled as part of, and for the sole purpose of developing or running, ReDSeeDS Engine or modified versions of ReDSeeDS engine; 
+
+ (ii) do not remove or alter any proprietary legends or notices contained in or on the Software or Redistributables,
+
+ (iii) only distribute the Software or Redistributables subject to a license agreement that protects IST's interests consistent with the terms contained in this Agreement, and 
+
+ (iv) you agree to defend and indemnify IST and its licensors from and against any damages, costs, liabilities, settlement amounts and/or expenses (including attorneys' fees) incurred in connection with any claim, lawsuit or action by any third party that arises or results from the use or distribution of any and all Programs, Software, or Redistributables. 
+
+
+3. Restrictions. 
+(a) The copies of Software provided to you under this Agreement is licensed, not sold, to you by IST. IST reserves all rights not expressly granted. 
+
+(b) You may not modify Software. However if the documentation accompanying Software lists specific portions of Software, such as header files, class libraries, reference source code, and/or redistributable files, that may be handled differently, you may do so only as provided in the documentation. 
+
+(c) You may not sell, rent, lease, lend or encumber Software. This applies also to Software included in the ReDSeeDS engine distribution.
+
+(d) You do not remove or alter any proprietary legends or notices contained in the Software.
+
+(e) Unless enforcement is prohibited by applicable law, you may not decompile, or reverse engineer Software.
+
+(f) The terms and conditions of this Agreement will apply to any Software updates, provided to you at IST's discretion, that replace and/or supplement the original Software, unless such update contains a separate license. 
+
+(g) Software is confidential and copyrighted. 
+
+(h) Software is not designed, licensed or intended for use in the design, construction, operation or maintenance of any nuclear facility and IST and its licensors disclaim any express or implied warranty of fitness for such uses. 
+
+(i) No right, title or interest in or to any trademark, service mark, logo or trade name of IST or its licensors is granted under this Agreement. 
+
+(j) If your Permitted Use in this Agreement permits the distribution Software or portions of the Software, you may only distribute the Software subject to a license agreement that protects IST's interests consistent with the terms contained in this Agreement. This Agreement also has to be contained as verbatim copy in the distribution.
+
+(k) Any program (including ReDSeeDS Engine itself) containing and/or using Software must display in a prominent place a notice of that usage, together with a verbatim copy of and/or link to this Agreement.
+
+(l) If you develop a product, possibly derived from ReDSeeDS Engine, that contains and/or uses Software, and you want to sell, rent, lease, lend or encumber that product, you have to take one of the following two actions:
+
+ (i) You make your product free software under the GNU General Public License (GPL). In this case, you also have to use the GPL licensed version of Software published on IST's website.
+
+ (ii) You have to apply at IST for a commercial license of Software.
+
+
+4. Term and Termination. 
+The Agreement is effective on the Date you receive the Software and remains effective until terminated. Your rights under this Agreement will terminate immediately without notice from IST if you materially breach it or take any action in derogation of IST's and/or its licensors' rights to Software. IST may terminate this Agreement should any Software become, or in IST's reasonable opinion likely to become, the subject of a claim of intellectual property infringement or trade secret misappropriation. Upon termination, you will cease use of, and destroy, Software and confirm compliance in writing to IST. Sections 1, 3, 4, and 5-12 will survive termination of the Agreement.
+
+
+5. Limited Warranty. 
+Software is provided "AS IS". Your exclusive remedy and IST's entire liability under this limited warranty will be to provide an intact copy of Software in the case that the Software was accidentally damaged during transfer.
+
+
+6. Disclaimer of Warranty. 
+UNLESS SPECIFIED IN THIS AGREEMENT, ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT ARE DISCLAIMED, EXCEPT TO THE EXTENT THAT THESE DISCLAIMERS ARE HELD TO BE LEGALLY INVALID.
+
+
+7. Limitation of Liability. 
+TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT WILL IST OR ITS LICENSORS BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR SPECIAL, INDIRECT, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF OR RELATED TO THE USE OF OR INABILITY TO USE SOFTWARE, EVEN IF IST HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. In no event will IST's liability to you, whether in contract, tort (including negligence), or otherwise, exceed the amount paid by you for Software under this Agreement. The foregoing limitations will apply even if the above stated warranty fails of its essential purpose. Some states do not allow the exclusion of incidental or consequential damages, so some of the terms above may not be applicable to you.
+
+
+8. Governing Law. 
+Any action related to this Agreement will be governed by German law. No choice of law rules of any jurisdiction will apply.
+
+
+9. Severability.
+If any provision of this Agreement is held to be unenforceable, this Agreement will remain in effect with the provision omitted, unless omission would frustrate the intent of the parties, in which case this Agreement will immediately terminate.
+
+
+10. Integration. 
+This Agreement is the entire agreement between you and IST relating to its subject matter. It supersedes all prior or contemporaneous oral or written communications, proposals, representations and warranties and prevails over any conflicting or additional terms of any quote, order, acknowledgement, or other communication between the parties relating to its subject matter during the term of this Agreement. No modification of this Agreement will be binding, unless in writing and signed by an authorized representative of each party.

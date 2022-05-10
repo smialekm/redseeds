@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         id="ide"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="ReDSeeDS Engine">
+         <property
+               name="aboutText"
+               value="ReDSeeDS Engine version 0.7.4&#x0A;http://www.redseeds.eu/ http://redseeds.sourceforge.net/ http://www.remics.eu/&#x0A;&#x0A;This tool uses JGraLab http://jgralab.uni-koblenz.de/ to manipulate data.&#x0A;&#x0A;Visit http://p.sf.net/redseeds/Legal for a full list of products used&#x0A;or check individual plugins for details.">
+         </property>
+         <property
+               name="appName"
+               value="ReDSeeDS Engine">
+         </property>
+         <property
+               name="aboutImage"
+               value="about.bmp">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="0,256,185,10">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="190,250,180,20">
+         </property>
+         <property
+               name="windowImages"
+               value="redseeds.gif">
+         </property>
+         <property
+               name="introTitle"
+               value="%productIntroTitle">
+         </property>
+         <property
+               name="introBrandingImage"
+               value="product:intro.gif">
+         </property>
+         <property
+               name="introBrandingImageText"
+               value="%productIntroBrandingText">
+         </property>
+         <!--
+		  <property
+				name="introDescription-overview"
+				value="%introDescription-overview"/>
+		  <property
+				name="introDescription-tutorials"
+				value="%introDescription-tutorials"/>
+		  <property
+				name="introDescription-samples"
+				value="%introDescription-samples"/>                
+         -->
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro">
+		<introProductBinding
+            introId="org.eclipse.ui.intro.universal"
+            productId="eu.redseeds.engine.ide"/>         
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="eu.redseeds.engine.perspective.PerspectiveFactory"
+            icon="icons/redseeds_persp.png"
+            id="eu.redseeds.engine.perspective"
+            name="ReDSeeDS">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="ReDSeeDS"
+            id="eu.redseeds.category"/>
+      <view
+            allowMultiple="true"
+            class="eu.redseeds.engine.navigator.SCNavigator"
+            icon="icons/redseeds_persp.png"
+            id="eu.redseeds.engine.navigator.view"
+            name="Current SC"
+            category="eu.redseeds.category"/>
+   </extension>
+   <!-- Declare the viewer configuration, and the default content/action bindings -->
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewer viewerId="eu.redseeds.engine.navigator.view"/>
+      <viewerContentBinding viewerId="eu.redseeds.engine.navigator.view">
+         <includes>
+            <contentExtension pattern="org.eclipse.ui.navigator.resourceContent"/>
+            <contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/> 
+            <contentExtension pattern="eu.redseeds.engine.SCProjectFilter"/>  
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="eu.redseeds.engine.navigator.view">
+         <includes>
+            <actionExtension pattern="org.eclipse.ui.navigator.resources.*"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+   <!-- Declare ReDSeeDS filter -->
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <commonFilter
+            id="eu.redseeds.engine.SCProjectFilter"
+            name="Hide internal ReDSeeDS Files"
+            class="eu.redseeds.engine.navigator.SCProjectFilter"
+            activeByDefault="true"> 
+      </commonFilter>
+   </extension>
+   
+   <!-- Declare non-resource nodes -->
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContent"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS Project root content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="org.eclipse.core.resources.IProject">
+       		</instanceof>
+   	   </or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.sclkernel.SoftwareCaseDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.sclkernel.ClipboardDTO">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+	</navigatorContent>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContentChildrenSC"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS Software Case content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.sclkernel.SoftwareCaseDTO">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.sclkernel.SoftwareCaseArtifact">
+       		</instanceof>
+       	</or>
+       	<or>
+       		<instanceof
+               value="org.eclipse.core.resources.IFolder">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+	</navigatorContent>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContentClip"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS Project Clipboard content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.sclkernel.ClipboardDTO">
+       		</instanceof>
+   	   </or>
+       </triggerPoints>
+	       <possibleChildren>
+	       	<or>
+	       		<instanceof
+	               value="eu.redseeds.scl.model.sclkernel.SoftwareCaseArtifact">
+	       		</instanceof>
+	       	</or>
+	       </possibleChildren>
+	</navigatorContent>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContentChildrenSCM"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS Requirements Specification content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsSpecificationDTO">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsPackageDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.domainelements.DomainSpecificationDTO">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+	</navigatorContent>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContentChildrenDomain"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS Domain Specification content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.domainelements.DomainSpecificationDTO">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorsPackageDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionsPackageDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementsPackageDTO">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+	</navigatorContent>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContentChildrenDomainActors"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS Actors Packages content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorsPackageDTO">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorsPackageDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorDTO">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+       <actionProvider
+             class="eu.redseeds.engine.navigator.providers.SCNavigatorActionProvider">
+            <enablement>
+     				<adapt type="eu.redseeds.scl.model.rsl.rsldomainelements.actors.ActorDTO" /> 
+          	</enablement> 
+       </actionProvider>
+	</navigatorContent>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContentChildrenDomainNotions"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS Notions Packages content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionsPackageDTO">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionsPackageDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionDTO">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+       <actionProvider
+             class="eu.redseeds.engine.navigator.providers.SCNavigatorActionProvider">
+            <enablement>
+     				<adapt type="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionDTO" /> 
+          	</enablement> 
+       </actionProvider>
+	</navigatorContent>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContentChildrenDomainStatements"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS Notion content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.notions.NotionDTO">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.notions.DomainStatementDTO">
+       		</instanceof>
+         <instanceof
+               value="eu.remics.recovery.model.dto.XPhrase">
+         </instanceof>
+       	</or>
+       </possibleChildren>
+       <actionProvider
+             class="eu.redseeds.engine.navigator.providers.SCNavigatorActionProvider">
+            <enablement>
+     				<adapt type="eu.redseeds.scl.model.rsl.rsldomainelements.notions.DomainStatementDTO" /> 
+          	</enablement> 
+       </actionProvider>
+	</navigatorContent>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContentChildrenDomainSystemElements"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS System Elements Packages content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementsPackageDTO">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementsPackageDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementDTO">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+       <actionProvider
+             class="eu.redseeds.engine.navigator.providers.SCNavigatorActionProvider">
+            <enablement>
+     				<adapt type="eu.redseeds.scl.model.rsl.rsldomainelements.systemelements.SystemElementDTO" /> 
+          	</enablement> 
+       </actionProvider>
+	</navigatorContent>
+   </extension>
+   
+    <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContentChildrenReqPackages"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS Requirements Packages content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsPackageDTO">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementsPackageDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.UseCaseDTO">
+       		</instanceof>
+         <instanceof
+               value="org.eclipse.core.resources.IFile">
+         </instanceof>
+       	</or>
+       </possibleChildren>
+       <actionProvider
+             class="eu.redseeds.engine.navigator.providers.SCNavigatorActionProvider">
+            <enablement>
+    			<or>
+     				<adapt type="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.UseCaseDTO" /> 
+     				<adapt type="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.RequirementDTO" />
+    			</or>
+          	</enablement> 
+       </actionProvider>
+	</navigatorContent>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContentChildrenScenarios"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS Use Cases content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rslrequirements.requirementsspecifications.UseCaseDTO">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.ConstrainedLanguageScenarioDTO">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+       <actionProvider
+             class="eu.redseeds.engine.navigator.providers.SCNavigatorActionProvider">
+            <enablement>
+     				<adapt type="eu.redseeds.scl.model.rsl.rslrequirementrepresentations.descriptiverequirementrepresentations.ConstrainedLanguageScenarioDTO" /> 
+          	</enablement> 
+       </actionProvider>
+       </navigatorContent>
+   </extension> 
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContentArchitecturePackages"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS Use Cases content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.sclkernel.ArchitecturalModelDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.sclkernel.DetailedDesignModelDTO">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.sdsl.PackageDTO">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+       <actionProvider
+             class="eu.redseeds.engine.navigator.providers.SCNavigatorActionProvider">
+            <enablement>
+     				<adapt type="eu.redseeds.scl.model.sclkernel.ArchitecturalModelDTO" />
+     				<adapt type="eu.redseeds.scl.model.sclkernel.DetailedDesignModelDTO" />  
+          	</enablement> 
+       </actionProvider>
+       </navigatorContent>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContentArchitectureSubElements"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS SDSL content">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.sdsl.PackageDTO">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.sdsl.PackageDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.sdsl.ClassDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.sdsl.ComponentDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.sdsl.InterfaceDTO">
+       		</instanceof>
+       	</or>
+       </possibleChildren>
+       <actionProvider
+             class="eu.redseeds.engine.navigator.providers.SCNavigatorActionProvider">
+            <enablement>
+     				<adapt type="eu.redseeds.scl.model.sdsl.PackageDTO" />
+     				<adapt type="eu.redseeds.scl.model.sdsl.ClassDTO" />
+     				<adapt type="eu.redseeds.scl.model.sdsl.ComponentDTO" />
+     				<adapt type="eu.redseeds.scl.model.sdsl.InterfaceDTO" /> 
+          	</enablement> 
+       </actionProvider>
+       </navigatorContent>
+   </extension>  
+   
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+	<navigatorContent
+       contentProvider="eu.redseeds.engine.navigator.providers.NavigatorContentProvider"
+       id="eu.redseeds.engine.navigatorContentSDSLOperations"
+       labelProvider="eu.redseeds.engine.navigator.providers.NavigatorLabelProvider"
+       name="ReDSeeDS SDSL content (operations)">
+       <triggerPoints>
+       	<or>
+       		<instanceof
+               value="eu.redseeds.scl.model.sdsl.ClassDTO">
+       		</instanceof>
+       		<instanceof
+               value="eu.redseeds.scl.model.sdsl.InterfaceDTO">
+       		</instanceof>
+       	</or>
+       </triggerPoints>
+       <possibleChildren>
+        <or>
+       		<instanceof
+               value="eu.redseeds.scl.model.sdsl.OperationDTO">
+       		</instanceof>
+       	</or>	
+       </possibleChildren>
+       <actionProvider
+             class="eu.redseeds.engine.navigator.providers.SCNavigatorActionProvider">
+            <enablement>
+     				<adapt type="eu.redseeds.scl.model.sdsl.OperationDTO" />
+          	</enablement> 
+       </actionProvider>
+       </navigatorContent>
+   </extension>  
+   
+   <extension
+   		point="org.eclipse.ui.navigator.viewer">
+	   <viewerContentBinding
+	         viewerId="eu.redseeds.engine.navigator.view">
+	         <includes>
+	         	<contentExtension
+	         		isRoot="false"
+	                pattern="eu.redseeds.engine.*">
+	         	</contentExtension>
+	         </includes>
+	   </viewerContentBinding>	
+   </extension>
+   
+   <extension
+   		point="org.eclipse.ui.viewActions">
+      <viewContribution
+            id="eu.redseeds.engine.problemViewContribution"
+            targetID="org.eclipse.ui.views.ProblemView">
+            <action
+                  class="eu.redseeds.engine.navigator.actions.ClearValidationProblemsAction"
+                  id="eu.redseeds.engine.navigator.actions.ClearValidationProblemsAction"
+                  label="Clear"
+                  icon="icons/clear.gif"
+                  tooltip="Delete all validation problems"
+                  enablesFor="*"
+                  toolbarPath="Normal/additions">
+            </action>
+      </viewContribution> 
+	  
+   </extension>
+   
+   <extension
+         id="sclelementDrop"
+         name="ReDSeeDS Resource Drop"
+         point="org.eclipse.ui.dropActions">
+      <action
+            class="eu.redseeds.engine.navigator.dnd.SCLElementPluginDropAdapter"
+            id="eu.redseeds.engine.navigator.dnd.SCLElementDrop">
+      </action>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="eu.redseeds.engine.actionSet"
+            label="Configure Terminology server connection"
+            visible="true">
+         <menu
+               id="redseeds.menu"
+               label="ReDSeeDS">
+            <separator
+                  name="redseedsGroup">
+            </separator>
+         </menu>
+         <action
+               class="eu.redseeds.engine.navigator.actions.ConfigureJGWNLConnectionAction"
+               id="eu.redseeds.engine.navigator.actions.ConfigureJGWNLConnectionAction"
+               icon="icons/terminology_server.gif"
+               label="Configure Terminology server connection"
+               menubarPath="redseeds.menu/redseedsGroup"
+               tooltip="Configures Terminology server connection">
+         </action>
+         <action
+               class="eu.redseeds.engine.navigator.actions.JGWNLClientAction"
+               id="eu.redseeds.engine.navigator.actions.JGWNLClientAction"
+               label="JGWNLClient"
+               menubarPath="redseeds.menu/redseedsGroup">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

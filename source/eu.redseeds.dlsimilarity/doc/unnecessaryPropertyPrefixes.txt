@@ -1,0 +1,6 @@
+/ Elements beginning with the following string prefixes should not be converted to owl elements
+java5
+uml
+mapping
+relationships
+ea

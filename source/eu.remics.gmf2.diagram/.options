@@ -1,0 +1,7 @@
+# Tracing options for the eu.remics.gmf2.diagram plug-in
+
+# Common issues
+eu.remics.gmf2.diagram/debug=false
+
+# Visual IDs
+eu.remics.gmf2.diagram/debug/visualID=false

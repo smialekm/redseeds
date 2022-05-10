@@ -1,0 +1,2 @@
+rsl.rsldomainelements.terms.TermLinksToWordNetEntry-of
+

@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Navigator
+Bundle-SymbolicName: eu.redset.navigator; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: eu.redset.navigator.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.navigator,
+ org.eclipse.core.resources;bundle-version="3.6.1",
+ eu.redseeds.common;bundle-version="4.0.0",
+ eu.redset.emf;bundle-version="1.0.0",
+ eu.redseeds.sc.current.repository,
+ eu.redset.tsl.editor;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: eu.redset.navigator,
+ eu.redset.navigator.providers
+Import-Package: eu.redseeds.sc.current.repository,
+ org.eclipse.ui.actions

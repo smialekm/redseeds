@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RSL Editor
+Bundle-SymbolicName: eu.redseeds.sc.editor.rsl;singleton:=true
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.sc.editor.rsl.Activator
+Bundle-Vendor: ReDSeeDS Team
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ eu.redseeds.common,
+ org.eclipse.core.resources,
+ org.eclipse.ui.ide,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.navigator,
+ eu.redseeds.scl.model,
+ eu.redseeds.sc.current.repository,
+ eu.redseeds.terminology.model,
+ org.eclipse.debug.ui,
+ eu.remics.recovery.model;bundle-version="1.0.0",
+ eu.remics.common;bundle-version="1.0.0"
+Eclipse-LazyStart: true
+Export-Package: eu.redseeds.sc.editor.rsl,
+ eu.redseeds.sc.editor.rsl.actions,
+ eu.redseeds.sc.editor.rsl.editors,
+ eu.redseeds.sc.editor.rsl.editors.domain,
+ eu.redseeds.sc.editor.rsl.editors.domain.controls,
+ eu.redseeds.sc.editor.rsl.editors.sentencewidgets.grammars,
+ eu.redseeds.sc.editor.rsl.editors.sentencewidgets.providers
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: rsldl.diagram

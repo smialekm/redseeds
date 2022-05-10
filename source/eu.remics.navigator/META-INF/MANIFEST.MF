@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: REMICS Navigator
+Bundle-SymbolicName: eu.remics.navigator;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: eu.remics.navigator.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ eu.remics.recovery.model;bundle-version="1.0.0",
+ eu.remics.recovery.manager;bundle-version="1.0.0",
+ org.eclipse.ui.navigator;bundle-version="3.5.0",
+ eu.redseeds.engine;bundle-version="4.3.0",
+ eu.redseeds.scl.model;bundle-version="4.0.0",
+ eu.redseeds.common;bundle-version="4.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: eu.remics.navigator,
+ eu.remics.navigator.tree,
+ eu.remics.navigator.views

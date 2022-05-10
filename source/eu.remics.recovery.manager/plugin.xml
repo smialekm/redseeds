@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="eu.remics.recovery.manager.views.UnassignedScenariosView"
+            icon="icons/scenario.gif"
+            id="eu.remics.recovery.manager.views.UnassignedScenarioListView"
+            name="Detached scenario list"
+            restorable="true">
+      </view>
+      <view
+            class="eu.remics.recovery.manager.views.AssignScenarioView"
+            icon="icons/scenario.gif"
+            id="eu.remics.recovery.manager.views.AssignScenarioView"
+            name="Attach scenario">
+      </view>
+      <view
+            class="eu.remics.recovery.manager.views.SplitScenarioView"
+            icon="icons/scenario.gif"
+            id="eu.remics.recovery.manager.views.SplitScenarioView"
+            name="Split scenario">
+      </view>
+      <view
+            class="eu.remics.recovery.manager.views.FindSimilarScenariosView"
+            icon="icons/scenario.gif"
+            id="eu.remics.recovery.manager.views.FindSimilarScenariosView"
+            name="Similar scenarios found">
+      </view>
+      <view
+            class="eu.remics.recovery.manager.views.DetailedSimilarScenariosView"
+            icon="icons/scenario.gif"
+            id="eu.remics.recovery.manager.views.DetailedSimilarScenariosView"
+            name="Scenarios in details">
+      </view>
+      <view
+            class="eu.remics.recovery.manager.views.RecoveryScenarioPreviewView"
+            icon="icons/scenario.gif"
+            id="eu.remics.recovery.manager.views.PreviewView"
+            name="Recovered scenario preview">
+      </view>
+   </extension>
+
+</plugin>

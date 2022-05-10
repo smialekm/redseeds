@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/eu.redset.emf/src"
+    modelPluginID="eu.redset.emf" modelName="Tsl" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>tsl.ecore</foreignModel>
+  <genPackages prefix="Tsl" basePackage="eu.redset.emf.model" disposableProviderFactory="true"
+      ecorePackage="tsl.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tsl.ecore#//DomainObjectType">
+      <genEnumLiterals ecoreEnumLiteral="tsl.ecore#//DomainObjectType/InputData"/>
+      <genEnumLiterals ecoreEnumLiteral="tsl.ecore#//DomainObjectType/ActionDescription"/>
+    </genEnums>
+    <genClasses ecoreClass="tsl.ecore#//TestSpecification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestSpecification/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestSpecification/EReference0"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestSpecification/scUid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestSpecification/uid"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//TestPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestPackage/EReference0"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestPackage/EReference1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestPackage/EReference3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestPackage/Notions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestPackage/NFTests"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestPackage/GUITests"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestPackage/BLTests"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestPackage/name"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//Test">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//Test/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//Test/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//Test/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//Test/classifierId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//Test/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//Test/testPrecondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//Test/testPostcondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//Test/testResult"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//Test/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//Test/testParameters"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//UseCaseTest">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//UseCaseTest/EReference0"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//UseCaseTest/ucName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//UseCaseTest/ucTrail"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//UseCaseTest/invocationSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//UseCaseTest/uid"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//UseCaseTestScenario">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//UseCaseTestScenario/sentences"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//UseCaseTestScenario/actor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tsl.ecore#//UseCaseTestScenario/precondition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tsl.ecore#//UseCaseTestScenario/postcondition"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//UseCaseTestScenarioSentence">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tsl.ecore#//UseCaseTestScenarioSentence/EReference0"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tsl.ecore#//UseCaseTestScenarioSentence/EReference1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tsl.ecore#//UseCaseTestScenarioSentence/ScenarioSentence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//UseCaseTestScenarioSentence/name"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//TestScenario">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tsl.ecore#//TestScenario/EReference0"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestScenario/EReference1"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//TestCase">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tsl.ecore#//TestCase/EReference1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestCase/orderNumber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestCase/precondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestCase/postcondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestCase/ucName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestCase/ucTrail"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestCase/ucScenarioName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestCase/sentences"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestCase/orderNumberGlobal"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//TestCaseSentence">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tsl.ecore#//TestCaseSentence/EReference0"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestCaseSentence/scenarioSentence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestCaseSentence/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestCaseSentence/context"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//UseCaseTestScenarioInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//UseCaseTestScenarioInstance/EReference3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//UseCaseTestScenarioInstance/ucName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//UseCaseTestScenarioInstance/ucTrail"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="tsl.ecore#//ScenarioSentence"/>
+    <genClasses ecoreClass="tsl.ecore#//SVOSentence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//SVOSentence/directObject"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//SVOSentence/indirectObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//SVOSentence/number"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tsl.ecore#//SVOSentence/predicate"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//ControlSentence">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tsl.ecore#//ControlSentence/invocation"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//ConditionSentence"/>
+    <genClasses ecoreClass="tsl.ecore#//Precondition"/>
+    <genClasses ecoreClass="tsl.ecore#//Postcondition"/>
+    <genClasses ecoreClass="tsl.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//Condition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//TestRelationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tsl.ecore#//TestRelationship/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestRelationship/type"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//TestInvocationRelationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tsl.ecore#//TestInvocationRelationship/EReference0"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tsl.ecore#//TestInvocationRelationship/invocationTarget"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestInvocationRelationship/uid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestInvocationRelationship/includeType"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//DomainObject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//DomainObject/inputData"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//DomainObject/domainObjectType"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//NotionAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//NotionAttribute/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//NotionAttribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//NotionAttribute/description"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//NFTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//NFTest/nfrTrail"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//NFTest/uid"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//GUITest"/>
+    <genClasses ecoreClass="tsl.ecore#//BLTest"/>
+    <genClasses ecoreClass="tsl.ecore#//Notion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//Notion/DomainStatements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//Notion/notionName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//Notion/notionDescription"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//Notion/notionTrail"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//Notion/attributes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//Notion/uid"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//DomainStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//DomainStatement/DirectNotion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//DomainStatement/IndirectNotion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//DomainStatement/phraseName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//DomainStatement/phraseDescription"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//DomainStatement/uid"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//CCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//CCondition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//TestValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestValue/name"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//TestParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestParameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestParameter/domain"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tsl.ecore#//TestParameter/expectedValue"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//TestInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tsl.ecore#//TestInstance/attachedTests"/>
+    </genClasses>
+    <genClasses ecoreClass="tsl.ecore#//NFTestInstance"/>
+    <genClasses ecoreClass="tsl.ecore#//GUITestInstance"/>
+    <genClasses ecoreClass="tsl.ecore#//BLTestInstance"/>
+    <genClasses ecoreClass="tsl.ecore#//TestDataValuesContext"/>
+  </genPackages>
+</genmodel:GenModel>

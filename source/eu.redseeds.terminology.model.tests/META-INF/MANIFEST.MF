@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests Plug-in for the Terminology model
+Bundle-SymbolicName: eu.redseeds.terminology.model.tests
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.terminology.model.tests.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ eu.redseeds.terminology.model,
+ org.junit,
+ eu.redseeds.common
+Eclipse-LazyStart: true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

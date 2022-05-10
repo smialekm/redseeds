@@ -1,0 +1,7 @@
+#path to eclipse home, for example: 
+#eclipse.home=d:/eclipse-3.3.1.1
+eclipse.home=
+
+#path to java home, for example:
+#java.home=d:/Program Files/Java/jre1.6.0
+java.home=

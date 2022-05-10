@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="eu.redseeds.category"
+            name="ReDSeeDS">
+      </category>
+      <wizard
+            category="eu.redseeds.category"
+            class="eu.redseeds.sc.project.wizards.NewSCProjectWizard"
+            finalPerspective="eu.redseeds.engine.perspective"
+            icon="icons/newprj_wiz.gif"
+            id="eu.redseeds.sc.project.wizards.NewSCProjectWizard"
+            name="New Software Case Project"
+            project="true">
+      </wizard>
+   </extension>
+   <extension
+         id="projectnature"
+         point="org.eclipse.core.resources.natures"
+         name="Software Case Project Nature"
+         >
+      <runtime>
+         <run
+               class="eu.redseeds.sc.project.ProjectNature">
+         </run>
+      </runtime>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="eu.redseeds.sc.project.createNewProjectActionSet"
+            label="Create a new SC Project"
+            visible="true">
+          <action
+               class="eu.redseeds.sc.project.actions.CreateNewProjectAction"
+               definitionId="eu.redseeds.sc.project.actions.CreateNewProjectCommand"
+               id="eu.redseeds.sc.project.actions.CreateNewProjectAction"
+               label="Create a new SC Project">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+         <command
+               id="eu.redseeds.sc.project.actions.CreateNewProjectCommand"
+               categoryId="eu.redseeds.category"
+               name="Create a new SC Project"
+               defaultHandler="eu.redseeds.sc.project.actions.DefaultActionHandler">
+         </command>
+         <category
+            id="eu.redseeds.category"
+            name="ReDSeeDS">
+      	</category>
+   </extension>
+
+</plugin>

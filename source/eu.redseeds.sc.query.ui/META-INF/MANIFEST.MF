@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SCQL Manager
+Bundle-SymbolicName: eu.redseeds.sc.query.ui; singleton:=true
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.sc.query.ui.Activator
+Bundle-Vendor: ReDSeeDS Team
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ eu.redseeds.sc.current.repository,
+ eu.redseeds.scl.model,
+ eu.redseeds.sc.query.engine,
+ eu.redseeds.common,
+ eu.redseeds.engine,
+ eu.redseeds.sc.slicing,
+ org.eclipse.core.resources,
+ eu.redseeds.sc.merging,
+ org.eclipse.jface.text,
+ eu.redseeds.sc.editor.rsl,
+ org.eclipse.compare,
+ eu.remics.alp;bundle-version="1.0.0"
+Eclipse-LazyStart: true
+Export-Package: eu.redseeds.sc.query.ui.editors
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

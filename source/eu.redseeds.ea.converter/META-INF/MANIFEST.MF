@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EA Converter Plug-in
+Bundle-SymbolicName: eu.redseeds.ea.converter
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.ea.converter.Activator
+Bundle-Vendor: ReDSeeDS Team
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.jface,
+ eu.redseeds.common,
+ org.eclipse.ui,
+ eu.redseeds.sc.current.repository,
+ eu.redseeds.scl.model;bundle-version="4.0.0"
+Eclipse-LazyStart: true
+Export-Package: eu.redseeds.ea.converter.impl,
+ eu.redseeds.ea.converter.interfaces,
+ org.sparx
+Bundle-ClassPath: .,
+ lib/eaapi.jar
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: eu.redseeds.sc.editor.rsl.editors.domain.controls,
+ org.apache.xerces.parsers

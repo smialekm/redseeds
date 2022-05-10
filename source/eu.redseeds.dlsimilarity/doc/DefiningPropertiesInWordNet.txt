@@ -1,0 +1,16 @@
+dictionaryelements.ContainsSynonym-of
+dictionaryelements.ContainsAdjectiveSynonym-of
+dictionaryelements.ContainsAdverbSynonym-of
+dictionaryelements.ContainsConditionalConjunctionSynonym-of
+dictionaryelements.ContainsDeterminerSynonym-of
+dictionaryelements.ContainsNounSynonym-of
+dictionaryelements.ContainsPrepositionSynonym-of
+dictionaryelements.ContainsVerbSynonym-of
+dictionaryelements.HasSynonym-of
+dictionaryelements.HasAdjectiveSynonym-of
+dictionaryelements.HasAdverbSynonym-of
+dictionaryelements.HasConditionalConjunctionSynonym-of
+dictionaryelements.HasDeterminerSynonym-of
+dictionaryelements.HasNounSynonym-of
+dictionaryelements.HasPrepositionSynonym-of
+dictionaryelements.HasVerbSynonym-of

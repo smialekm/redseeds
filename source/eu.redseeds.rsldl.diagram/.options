@@ -1,0 +1,7 @@
+# Tracing options for the eu.redseeds.rsldl.diagram plug-in
+
+# Common issues
+eu.redseeds.rsldl.diagram/debug=false
+
+# Visual IDs
+eu.redseeds.rsldl.diagram/debug/visualID=false

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transformation Store
+Bundle-SymbolicName: eu.redseeds.transformation.store;singleton:=true
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.transformation.store.Activator
+Bundle-Vendor: ReDSeeDS Team
+Require-Bundle: org.eclipse.core.runtime,
+ eu.redseeds.common,
+ org.eclipse.jface,
+ eu.redseeds.scl.model,
+ org.eclipse.core.resources,
+ eu.redseeds.transformation.engine
+Eclipse-LazyStart: true
+Export-Package: eu.redseeds.transformation.store.interfaces;uses:="eu.redseeds.scl.model"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

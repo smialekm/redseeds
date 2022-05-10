@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: REMICS Script Loader
+Bundle-SymbolicName: eu.remics.script.loader;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: eu.remics.script.loader.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ eu.remics.common;bundle-version="1.0.0",
+ eu.remics.recovery.model;bundle-version="1.0.0",
+ eu.remics.recovery.manager;bundle-version="1.0.0",
+ eu.redseeds.scl.model;bundle-version="4.0.0",
+ eu.redseeds.common;bundle-version="4.0.0",
+ eu.remics.util;bundle-version="1.0.0",
+ eu.redseeds.terminology.model;bundle-version="4.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: eu.remics.script.loader,
+ eu.remics.script.loader.applogic,
+ eu.remics.script.loader.dialogs,
+ eu.remics.script.loader.presentation

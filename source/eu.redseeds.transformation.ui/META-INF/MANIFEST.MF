@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transformation Browser
+Bundle-SymbolicName: eu.redseeds.transformation.ui;singleton:=true
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.transformation.ui.Activator
+Bundle-Vendor: ReDSeeDS Team
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ eu.redseeds.common,
+ eu.redseeds.transformation.engine,
+ eu.redseeds.transformation.store,
+ eu.redseeds.scl.model,
+ org.eclipse.core.resources,
+ eu.redseeds.sc.current.repository,
+ eu.redseeds.ea.converter
+Eclipse-LazyStart: true
+Export-Package: eu.redseeds.transformation.ui.interfaces
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

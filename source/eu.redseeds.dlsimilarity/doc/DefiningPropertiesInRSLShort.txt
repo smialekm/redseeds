@@ -1,0 +1,2 @@
+// links Term and Synset:
+rsl.rsldomainelements.terms.TermLinksToWordNetEntry

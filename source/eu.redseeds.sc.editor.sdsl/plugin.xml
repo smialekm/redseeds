@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="eu.redseeds.sc.editor.sdsl.editors.SDSLEditor"
+            icon="icons/model_obj.gif"
+            id="eu.redseeds.sc.editor.sdsl.editors.SDSLEditor"
+            name="SDSL Editor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="eu.redseeds.sc.editor.sdsl.openEditorActionSet"
+            label="Open SDSL Editor"
+            visible="true">
+       <menu
+            id="redseeds.menu"
+            label="ReDSeeDS">
+            <separator
+                  name="redseedsGroup">
+            </separator>
+       </menu>
+       <action
+            class="eu.redseeds.sc.editor.sdsl.actions.SDSLEditorOpenAction"
+            icon="icons/model_obj.gif"
+            id="eu.redseeds.sc.editor.sdsl.actions.SDSLEditorOpenAction"
+            label="Open SDSL Editor"
+            menubarPath="redseeds.menu/redseedsGroup"
+            tooltip="Opens SDSL Editor">
+       </action>
+      </actionSet>
+   </extension>
+
+</plugin>

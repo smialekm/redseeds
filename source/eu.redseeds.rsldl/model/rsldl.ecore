@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rsldl" nsURI="http://rsldl/1.0" nsPrefix="rsldl">
+  <eClassifiers xsi:type="ecore:EClass" name="DLDomain" eSuperTypes="#//DLSubset">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//DLDomainElement" eOpposite="#//DLDomainElement/domains"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DLTypeRole">
+    <eLiterals name="identity" literal="Identity"/>
+    <eLiterals name="persistent_role" value="1" literal="Assigned role"/>
+    <eLiterals name="temporary_role" value="2" literal="Inferred role"/>
+    <eLiterals name="template" value="3" literal="Template"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLRelationshipParticipant" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLNotion" abstract="true" eSuperTypes="#//DLRelationshipParticipant #//DLDomainElement">
+    <eOperations name="getDirectAttributes">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//DLProperty"/>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="getAllAttributes">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//DLProperty"/>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="getInheritanceConditions">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//DLInheritanceCondition"/>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="getAttributesLinks">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//DLAttributeLink"/>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="getValidityConditions">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//DLValidityCondition"/>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="getIdentityConditions">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//DLIdentityCondition"/>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="getAllAttributesLinks">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//DLAttributeLink"/>
+      </eGenericType>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DLTypeRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//DLFeature" containment="true" eOpposite="#//DLFeature/notion"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dereferences" upperBound="-1"
+        eType="#//DLDereferenceLink" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="derived" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLPrimitive" eSuperTypes="#//DLRelationshipParticipant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DLRelationship" abstract="true" eSuperTypes="#//DLDomainElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participations" upperBound="-1"
+        eType="#//DLRelationshipParticipation" containment="true" eOpposite="#//DLRelationshipParticipation/relationship"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="abbreviation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLRelationshipParticipation" eSuperTypes="#//DLNamedLink">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//DLRelationshipParticipationDirection"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity" eType="#//DLRelationshipParticipationMultiplicity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participant" lowerBound="1"
+        eType="#//DLRelationshipParticipant"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationship" lowerBound="1"
+        eType="#//DLRelationship" eOpposite="#//DLRelationship/participations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentParticipation" eType="#//DLRelationshipParticipation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DLRelationshipParticipationType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DLRelationshipParticipationDirection">
+    <eLiterals name="undefined" value="2" literal="undefined"/>
+    <eLiterals name="source" literal="source"/>
+    <eLiterals name="target" value="1" literal="target"/>
+    <eLiterals name="double_sided" value="3" literal="double sided"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DLRelationshipParticipationMultiplicity">
+    <eLiterals name="single" literal="single"/>
+    <eLiterals name="multiple" value="1" literal="multiple"/>
+    <eLiterals name="ordered_multiple" value="2" literal="ordered multiple"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLDiagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipParticipants"
+        upperBound="-1" eType="#//DLRelationshipParticipant" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationships" upperBound="-1"
+        eType="#//DLRelationship" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLReference" abstract="true" eSuperTypes="#//DLRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DLTransition" abstract="true" eSuperTypes="#//DLRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DLAlghoritmicTransition" eSuperTypes="#//DLTransition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sequence" lowerBound="1"
+        eType="#//DLAlghoritmicTransitionSequenceElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLPatternBasedTransition" eSuperTypes="#//DLTransition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
+        eType="#//DLTransitionPattern" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLPatternBasedReference" eSuperTypes="#//DLReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
+        eType="#//DLConditionPattern" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLDataBasedReference" eSuperTypes="#//DLReference"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DLEntity" eSuperTypes="#//DLNotion"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DLProperty" eSuperTypes="#//DLNotion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueType" eType="#//DLPropertyValueType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="setType" eType="#//DLNotion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLFeature" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notion" lowerBound="1"
+        eType="#//DLNotion" eOpposite="#//DLNotion/features"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLCondition" abstract="true" eSuperTypes="#//DLFeature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DLPropertyValueType">
+    <eLiterals name="string" value="3"/>
+    <eLiterals name="boolean"/>
+    <eLiterals name="integer" value="1"/>
+    <eLiterals name="float" value="2"/>
+    <eLiterals name="date" value="4"/>
+    <eLiterals name="set" value="6"/>
+    <eLiterals name="ordered_set" value="7" literal="ordered set"/>
+    <eLiterals name="time" value="5"/>
+    <eLiterals name="enumeration" value="8"/>
+    <eLiterals name="composite" value="9" literal="composite"/>
+    <eLiterals name="inherited" value="10"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLAttributeLink" eSuperTypes="#//DLFeature #//DLNamedLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+        eType="#//DLProperty"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DLFeatureType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLInheritanceCondition" eSuperTypes="#//DLCondition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parents" upperBound="-1"
+        eType="#//DLNotion"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="featureType" eType="#//DLFeatureType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLIdentityCondition" eSuperTypes="#//DLCondition #//DLPatternCondition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DLValidityCondition" eSuperTypes="#//DLCondition #//DLPatternCondition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DLTransitionPattern" eSuperTypes="#//DLPattern">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DLTransitionPatternType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLConditionPattern" eSuperTypes="#//DLPattern">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DLConditionPatternType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLPattern" abstract="true" eSuperTypes="#//DLReferencingElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DLTransitionPatternType">
+    <eLiterals name="empty"/>
+    <eLiterals name="simple" value="1"/>
+    <eLiterals name="summation" value="2"/>
+    <eLiterals name="multiplication" value="3"/>
+    <eLiterals name="system" value="4" literal="system"/>
+    <eLiterals name="query" value="5"/>
+    <eLiterals name="mapping" value="6"/>
+    <eLiterals name="indirect" value="7"/>
+    <eLiterals name="evocation" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLSubset" abstract="true">
+    <eOperations name="getDomainNotions">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//DLNotion"/>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="getDomainRelationships">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//DLRelationship"/>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="getNotion" eType="#//DLNotion">
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getNotions">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//DLNotion"/>
+      </eGenericType>
+      <eParameters name="names">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getRelationshipByAbbreviation" eType="#//DLRelationship">
+      <eParameters name="abbreviation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLRepository" eSuperTypes="#//DLSubset #//DLDiagram">
+    <eOperations name="getDomain" eType="#//DLDomain">
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getDiagram" eType="#//DLDiagram">
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domains" upperBound="-1"
+        eType="#//DLDomain" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diagrams" upperBound="-1"
+        eType="#//DLDiagram" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLDomainElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domains" upperBound="-1"
+        eType="#//DLDomain" eOpposite="#//DLDomain/elements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DLConditionPatternType">
+    <eLiterals name="empty"/>
+    <eLiterals name="simple" value="1"/>
+    <eLiterals name="universal_quantification" value="2" literal="universal quantification"/>
+    <eLiterals name="existential_quantification" value="3" literal="existential quantification"/>
+    <eLiterals name="membership" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLPatternCondition" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
+        eType="#//DLConditionPattern" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLAlghoritmicTransitionSequenceElement"
+      abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sequent" eType="#//DLAlghoritmicTransitionSequenceElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLAlghoritmicTransitionStep" abstract="true"
+      eSuperTypes="#//DLAlghoritmicTransitionSequenceElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DLNamedLink" abstract="true">
+    <eOperations name="getElement" eType="#//DLRelationshipParticipant"/>
+    <eOperations name="getText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DLFeatureType">
+    <eLiterals name="provided"/>
+    <eLiterals name="required" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLDereferenceLink" eSuperTypes="#//DLNamedLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementType" lowerBound="1"
+        eType="#//DLNotion"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DLRelationshipParticipationType">
+    <eLiterals name="standard"/>
+    <eLiterals name="auxiliary_parent" value="1" literal="auxiliary parent"/>
+    <eLiterals name="auxiliary_role" value="2" literal="auxiliary role"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLCustomAlghoritmicTransitionStep" eSuperTypes="#//DLAlghoritmicTransitionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alternative" eType="#//DLAlghoritmicTransitionSequenceElement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
+        eType="#//DLTransitionPattern" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//DLConditionPattern"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLPredefinedAlghoritmicTransitionStep"
+      eSuperTypes="#//DLAlghoritmicTransitionStep">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DLPredefinedStepType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLControlFlowStatement" eSuperTypes="#//DLAlghoritmicTransitionSequenceElement #//DLReferencingElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DLControlFlowStatementType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DLReferencingElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subjectLink" eType="#//DLNamedLink"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DLControlFlowStatementType"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="DLPredefinedStepType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DLPartLink" eSuperTypes="#//DLFeature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partDereference" lowerBound="1"
+        eType="#//DLDereferenceLink"/>
+  </eClassifiers>
+</ecore:EPackage>

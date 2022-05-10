@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Application Logic Patterns for REMICS
+Bundle-SymbolicName: eu.remics.alp
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: eu.remics.alp.Activator
+Bundle-Vendor: Albert Ambroziewicz
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.5.1",
+ eu.redseeds.common;bundle-version="4.0.0",
+ eu.redseeds.scl.model;bundle-version="4.0.0",
+ eu.redseeds.sc.current.repository;bundle-version="4.0.0",
+ eu.redseeds.engine;bundle-version="4.3.0",
+ eu.redseeds.sc.slicing;bundle-version="4.0.0",
+ eu.redseeds.sc.editor.rsl;bundle-version="4.0.0",
+ eu.redseeds.terminology.model;bundle-version="4.0.0",
+ eu.redseeds.sc.merging;bundle-version="4.0.0"
+Bundle-ActivationPolicy: lazy
+Export-Package: eu.remics.alp,
+ eu.remics.alp.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

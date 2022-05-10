@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests
+Bundle-SymbolicName: eu.remics.recovery.model.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: eu.remics.recovery.model.tests.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.junit,
+ eu.remics.recovery.model;bundle-version="1.0.0",
+ eu.redseeds.scl.model,
+ eu.redseeds.sc.current.repository;bundle-version="4.0.0",
+ eu.redseeds.common;bundle-version="4.0.0",
+ org.eclipse.core.resources;bundle-version="3.6.1"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

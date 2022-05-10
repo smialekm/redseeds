@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Slicing Plug-in
+Bundle-SymbolicName: eu.redseeds.sc.slicing
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: eu.redseeds.sc.slicing.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ eu.redseeds.common,
+ eu.redseeds.scl.model
+Eclipse-LazyStart: true
+Bundle-Vendor: ReDSeeDS Team
+Export-Package: eu.redseeds.sc.slicing,
+ eu.redseeds.sc.slicing.impl
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description>
+      Update site for the eclipse ReDSeeDS Engine
+   </description>
+   <feature url="features/eu.redseeds.feature_@eu.redseeds.feature@.jar" id="eu.redseeds.feature" version="@eu.redseeds.feature@">
+      <category name="redseeds"/>
+   </feature>
+   <category-def name="redseeds" label="ReDSeeDS"/>
+</site>

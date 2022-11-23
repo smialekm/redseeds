@@ -1069,6 +1069,10 @@ public class UseCaseScenarioView extends ScrolledComposite implements INewDomain
 	public void addAllDomainElements() {
 		//TODO uniemozliwic wlaczenie bez zapsiu (QuickFix)
 		if (isScenarioClipboardMember()) return;
+		if (editor.isDirty()) {
+			MessageDialog.openInformation(null, "Save needed", "To automatically add terms save project first.");
+			return;
+		}
 		for (ConstrainedLanguageSentenceDTO sent:scenario.getScenarioSentenceList())
 			if (sent instanceof SVOSentenceDTO){
 				if (null!=((SVOSentenceDTO) sent).getSubject()){

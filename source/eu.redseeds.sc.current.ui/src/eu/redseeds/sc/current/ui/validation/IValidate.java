@@ -193,5 +193,13 @@ public interface IValidate {
 	public int ID_NOTION_SIMPLE_VIEW_WITHOUT_ELEMENTS = 90;
 	public String MSG_NOTION_DATA_VIEW_WITHOUT_MAIN_CONCEPT = "Data view without main concept";
 	public int ID_NOTION_DATA_VIEW_WITHOUT_MAIN_CONCEPT = 91;
+	
+	//exceptions
+	public String MSG_NOTION_EXCEPTION = "Exception was thrown during notion validation";
+	public int ID_NOTION_EXCEPTION = 101;
+	public String MSG_DOMAIN_RELATIONSHIP_EXCEPTION = "Exception was thrown during domain relationship validation";
+	public int ID_DOMAIN_RELATIONSHIP_EXCEPTION = 102;
+	public String MSG_NOTION_SPECIALIZATION_EXCEPTION = "Exception was thrown during notion specialization validation";
+	public int ID_NOTION_SPECIALIZATION_EXCEPTION = 103;
 
 }

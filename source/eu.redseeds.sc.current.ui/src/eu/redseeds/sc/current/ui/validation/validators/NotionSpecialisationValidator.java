@@ -22,12 +22,20 @@ public class NotionSpecialisationValidator implements IValidate {
 		NotionSpecialisationDTO ns = (NotionSpecialisationDTO) element;
 		List<ValidationResult> list = new ArrayList<ValidationResult>();
 		ValidationResult vr = null;
-		if(!MNotion.canExistGeneralization(ns.getSpecialisedNotion(), ns.getGeneralNotion())){
+		try {
+			if(!MNotion.canExistGeneralization(ns.getSpecialisedNotion(), ns.getGeneralNotion())){
+				vr = new ValidationResult();
+				vr.setProblemID(IValidate.ID_NOTION_SPECIALISATION);
+				vr.setMessage(MSG_NOTION_SPECIALISATION);
+				vr.setSclElement(ns);
+				vr.setSeverity(IValidate.SEVERITY_WARNING);
+				list.add(vr);
+			}
+		} catch (Exception e) {
 			vr = new ValidationResult();
-			vr.setProblemID(IValidate.ID_NOTION_SPECIALISATION);
-			vr.setMessage(MSG_NOTION_SPECIALISATION);
-			vr.setSclElement(ns);
-			vr.setSeverity(IValidate.SEVERITY_WARNING);
+			vr.setProblemID(IValidate.ID_NOTION_SPECIALIZATION_EXCEPTION);
+			vr.setMessage(MSG_NOTION_SPECIALIZATION_EXCEPTION);
+			vr.setSclElement(element);
 			list.add(vr);
 		}
 		return list.toArray(new ValidationResult[0]);

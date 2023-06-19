@@ -23,12 +23,20 @@ public class DomainElementRelationshipValidator implements IValidate {
 		DomainElementRelationshipDTO der = (DomainElementRelationshipDTO) element;
 		List<ValidationResult> list = new ArrayList<ValidationResult>();
 		ValidationResult vr = null;
-		if(der.getSource() instanceof NotionDTO && der.getTarget() instanceof NotionDTO && !MNotion.canExistRelation((NotionDTO) der.getSource(), (NotionDTO) der.getTarget(), der.isDirected(), false)){
+		try {
+			if(der.getSource() instanceof NotionDTO && der.getTarget() instanceof NotionDTO && !MNotion.canExistRelation((NotionDTO) der.getSource(), (NotionDTO) der.getTarget(), der.isDirected(), false)){
+				vr = new ValidationResult();
+				vr.setProblemID(IValidate.ID_DOMAIN_ELEMENT_RELATIONSHIP);
+				vr.setMessage(MSG_DOMAIN_ELEMENT_RELATIONSHIP);
+				vr.setSclElement(der);
+				vr.setSeverity(IValidate.SEVERITY_WARNING);
+				list.add(vr);
+			}
+		} catch (Exception e) {
 			vr = new ValidationResult();
-			vr.setProblemID(IValidate.ID_DOMAIN_ELEMENT_RELATIONSHIP);
-			vr.setMessage(MSG_DOMAIN_ELEMENT_RELATIONSHIP);
-			vr.setSclElement(der);
-			vr.setSeverity(IValidate.SEVERITY_WARNING);
+			vr.setProblemID(IValidate.ID_DOMAIN_RELATIONSHIP_EXCEPTION);
+			vr.setMessage(MSG_DOMAIN_RELATIONSHIP_EXCEPTION);
+			vr.setSclElement(element);
 			list.add(vr);
 		}
 		return list.toArray(new ValidationResult[0]);

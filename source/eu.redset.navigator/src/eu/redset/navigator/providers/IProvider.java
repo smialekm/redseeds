@@ -8,5 +8,8 @@ import org.eclipse.jface.viewers.ITreeContentProvider;
  *
  */
 public interface IProvider extends ITreeContentProvider, ILabelProvider  {
-
+	
+	@Override
+	public void dispose();
+	
 }
